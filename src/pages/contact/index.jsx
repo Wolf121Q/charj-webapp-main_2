@@ -1,12 +1,23 @@
 import { useState } from "react";
 import emailjs from 'emailjs-com';
+//import checkedImg from "../../assets/images/check.png"
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const ContactUs = () => {
+  // const [open, setOpen] = useState(false);
+
+
+  const [isEmailSent, setIsEmailSent] = useState(false);
   const [contactData, setContactData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
+
+
+
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setContactData({ ...contactData, [name]: value });
@@ -14,42 +25,46 @@ const ContactUs = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-     const templateParams = {
+    const templateParams = {
       from_name: contactData.name,
       from_email: contactData.email,
-      from_phone:contactData.phone,
+      from_phone: contactData.phone,
       message: contactData.message,
     };
 
-console.log("test email ___ ", templateParams)
-       emailjs
+    console.log("test email _ ", templateParams)
+    emailjs
       .send('service_g6o7fam', 'template_z6bjfcp', templateParams, '7Hq5OshcW8yrj2bxw')
       .then((response) => {
         console.log('Email sent successfully!', response.text);
-        alert("data submitted successfully");
-        // Reset form
-        setContactData({
-         name:'',
-         email:'',
-         phone:'',
-         message:""
+        setIsEmailSent(true);
 
-         })
+        toast.success("Message Send Successfully!!", {
+          position: "top-center",
+          autoClose: 2000,
+          className: "custom-toast",
+        });
+        // alert("data submitted successfully");
+
+        setContactData({
+          name: '',
+          email: '',
+          phone: '',
+          message: ""
+
+        })
       })
       .catch((error) => {
         console.error('Error sending email:', error);
+        toast.error("Submission Failed ?", {
+          position: "top-center",
+          autoClose: 2000,
+          className: "custom-toast",
+        });
       });
 
 
 
-
-    // console.log("form submitted", contactData);
-    // setContactData({
-    //   name: "",
-    //   email: "",
-    //   phone: "",
-    //   message: "",
-    // });
   };
   return (
     <div className="flex justify-center py-20">
@@ -57,21 +72,24 @@ console.log("test email ___ ", templateParams)
         <div className="bg-white rounded-lg shadow-lg text-center p-4">
           <div className="p-4">
             <h4 className="text-2xl">
-              Engage With Us and See Positive Results
+              Join Us & See Results
             </h4>
             <div className="pt-7">
               <p className="text-lg">
-                Every business needs a sound operating plan to thrive.
+                We Have a Plan For You To Thrive.
               </p>
               <p className="text-lg">
-                Contact us; together we will achieve your eMobility goals and
-                objectives.
+                Contact us, We Will Help You Achive Your Goals
+
               </p>
             </div>
-            <h4 className="text-2xl pt-9">Charj, llc</h4>
-            <p className="text-lg pt-7">Hartford, Connecticut, United States</p>
+            <h4 className="text-2xl pt-9">CHARJ.co</h4>
+            <p className="text-lg pt-7">1115 Crestlawn Dr C1, Mississauga, ON L4W 1A7, Canada</p>
             <p className="text-lg pt-10">
-              The Other "C" State Leading the Evolution of eMobility
+
+              Cross Continent EV Revolution
+
+              Drive All Roads in the US, Canada, Europe and Middle East
             </p>
           </div>
           <div className="flex justify-center p-4">
@@ -150,8 +168,12 @@ console.log("test email ___ ", templateParams)
                 </div>
               </div>
 
+
+
               <div className="flex flex-col  items-center gap-5 text-gray-500">
-                <button className="bg-black text-base text-[#C6C6C6] tracking-wider font-bold px-6 py-3 border border-black rounded-md" onClick={()=>handleFormSubmit()}>
+                <button className="bg-black text-base text-[#C6C6C6] tracking-wider font-bold px-6 py-3 border border-black rounded-md" onClick={() => handleFormSubmit()}
+                  disabled={isEmailSent}
+                >
                   SEND
                 </button>
 
@@ -166,14 +188,14 @@ console.log("test email ___ ", templateParams)
                 </p>
 
                 <p>
-                  118 North Beacon Street, Hartford, Connecticut 06105, United
-                  States
+                  1115 Crestlawn Dr C1, Mississauga, ON L4W 1A7, Canada
                 </p>
               </div>
             </form>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

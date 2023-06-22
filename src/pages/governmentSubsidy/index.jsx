@@ -1,8 +1,11 @@
 import React from 'react'
+import Subsidy from '../../components/subsidy'
 
 const GovernmentSubsidy = () => {
   return (
-    <div>GovernmentSubsidy</div>
+    <div>
+        <Subsidy/>
+    </div>
   )
 }
 

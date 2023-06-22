@@ -16,3 +16,13 @@ select:required:invalid {
 .skew-logo {
   transform: matrix(1, 0, -0.6, 1, 15, 0)
 }
+.custom-toast {
+  background-color: black;
+  color: white;
+}
+/* .custom-toast .Toastify__progress-bar {
+  background-color: #338000;
+} */
+.custom-toast .custom-toastify-logo {
+  color: red;
+}
