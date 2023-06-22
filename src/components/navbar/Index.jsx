@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
 import { FaBars } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../../assets/charj_logo.png";
-import logoWhite from "../../assets/charj_logowhite.png";
+import logo from "../../assets/charj-logo.png";
+import logoWhite from "../../assets/charj-logo-white.png";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -25,10 +25,7 @@ const Navbar = () => {
     };
   }, []);
   const homeRoute = router.pathname === "/";
-  const darkBgRoute =
-    router.pathname === "/services" ||
-    router.pathname === "/padestal-energy" ||
-    router.pathname === "/charj-network";
+  const darkBgRoute = router.pathname === "/services";
 
   const menuItems = [
     { id: 1, title: "Government Subsidy", url: "/government-subsidy" },
@@ -42,25 +39,21 @@ const Navbar = () => {
       <div
         className={`${
           scrolled
-            ? "bg-white shadow-sm text-black"
+            ? "bg-white shadow-sm text-black "
             : "bg-transparent text-white"
         } fixed top-0 z-10 w-full max-w-full flex flex-row justify-between items-center transition-colors duration-300 mx-auto pr-5  `}
       >
-        <div
-          className={`${
-            scrolled ? "bg-[#000]" /* bg-[#a81313f6] */ : "bg-transparent"
-          } skew-logo  cursor-pointer  h-full px-4 py-5 `}
-        >
-          <Link to="/">
-            {!homeRoute && !darkBgRoute && !scrolled ? (
-              <img src={logo} alt="logo" className="h-5" />
-            ) : (
-              <img src={logoWhite} alt="logo" className="h-5" />
-            )}
-          </Link>
+        <div className={` cursor-pointer  h-full px-4 py-3  `}>
+          {scrolled ? (
+            <Link to="/">
+              <img src={logo} alt="logo" className="h-12 object-cover" />
+            </Link>
+          ) : (
+            <Link to="/">
+              <img src={logoWhite} alt="logo" className="h-12 object-cover" />
+            </Link>
+          )}
         </div>
-
-       
 
         <div className="hidden lg:flex  gap-5">
           {menuItems.map((item) => {
@@ -71,8 +64,8 @@ const Navbar = () => {
                   className={`${
                     (homeRoute || darkBgRoute) && !scrolled
                       ? "text-white"
-                      : "text-black"
-                  } cursor-pointer hover:font-semibold hover:bg-slate-100 hover:text-white hover:bg-opacity-5 px-3 py-1 rounded-md`}
+                      : "text-black hover:text-gray-800"
+                  } cursor-pointer   hover:bg-slate-100 hover:text-white hover:font-semibold font-semibold hover:bg-opacity-5 px-3 py-1 rounded-md uppercase`}
                 >
                   {item.title}
                 </Link>
@@ -88,7 +81,7 @@ const Navbar = () => {
               (homeRoute || darkBgRoute) && !scrolled
                 ? "text-white"
                 : "text-black"
-            } hidden lg:flex cursor-pointer hover:font-semibold hover:bg-slate-100 hover:text-white hover:bg-opacity-5 px-3 py-1 rounded-md`}
+            } hidden lg:flex cursor-pointer hover:font-semibold font-semibold hover:bg-slate-100 hover:text-white hover:bg-opacity-5 px-3 py-1 rounded-md uppercase`}
           >
             Partner With Us
           </Link>
@@ -108,6 +101,9 @@ const Navbar = () => {
           menuItems={menuItems}
           showMenu={showMenu}
           setShowMenu={setShowMenu}
+          homeRoute={homeRoute}
+          darkBgRoute={darkBgRoute}
+          scrolled={scrolled}
         />
       </div>
     </>

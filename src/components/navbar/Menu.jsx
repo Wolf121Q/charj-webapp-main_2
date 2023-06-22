@@ -2,7 +2,14 @@ import React from "react";
 import { RiCloseLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
-const Menu = ({ menuItems, setShowMenu, showMenu }) => {
+const Menu = ({
+  menuItems,
+  setShowMenu,
+  showMenu,
+  homeRoute,
+  darkBgRoute,
+  scrolled,
+}) => {
   return (
     <>
       <div
@@ -32,6 +39,12 @@ const Menu = ({ menuItems, setShowMenu, showMenu }) => {
               </Link>
             );
           })}
+          <Link
+            to="/join-us"
+            className={` flex lg:hidden text-md font-semibold cursor-pointer hover:bg-slate-200 px-3 py-1 rounded-md`}
+          >
+            Partner With Us
+          </Link>
         </div>
       </div>
       {showMenu && (
