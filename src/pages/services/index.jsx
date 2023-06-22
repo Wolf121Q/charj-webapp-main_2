@@ -1,43 +1,44 @@
 import React from "react";
-import services1 from "../../assets/images/subsidy/subsidy-1.webp";
-import services2 from "../../assets/images/subsidy/subsidy-2.webp";
-import services3 from "../../assets/images/subsidy/subsidy-3.jpg";
-import services4 from "../../assets/images/subsidy/subsidy-4.jpg";
+import services1 from "../../assets/images/services/services1.jpg";
+import services2 from "../../assets/images/services/services2.jpg";
+import services3 from "../../assets/images/services/services3.jpg";
+import services4 from "../../assets/images/services/services4.jpg";
 import services5 from "../../assets/images/services/services5.jpg";
 import services6 from "../../assets/images/services/services6.jpg";
 
 const Services = () => {
   return (
-    <div className=" bg-white pt-[120px] pb-[120px]">
+    <div className=" bg-black pt-[120px] pb-[120px]">
       <div className="text-center ">
-        <p className="text-[32px] font-semibold 2xl:text-[50px] text-gray-900">
-          GOVERNMENT SUBSIDY
+        <p className="text-[40px] font-semibold 2xl:text-[60px] text-[#ffffff]">
+          Our Services
         </p>
         <div className="flex justify-center">
           <hr className="w-[70px] border-[1.5px] mt-5"></hr>
         </div>
       </div>
-      <div className="mt-5  lg:flex justify-center">
+      <div className="mt-10  lg:flex justify-center">
         <div className="lg:w-[87rem] md:flex ">
           <div className=" flex justify-center md:w-[50%]   ">
             <img
               src={services1}
-              className="w-[95%] h-[77%] md:w-[98%] lg:h-[80%]"
+              className="w-[95%] h-[77%] md:w-[98%] lg:h-[100%]"
             ></img>
           </div>
           <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
             <div className="w-[95%] text-center   md:h-[300px] flex items-center ">
-              <div className=" h-[96%] flex flex-col items-center">
-                <h1 className="text-[24px] lg:text-[28px] lg:font-medium font-normal text-gray-700">
-                  Federal iZEV Program
+              <div className=" h-[96%]">
+                <h1 className="text-[24px] lg:text-[28px] lg:font-medium font-normal text-[#e2e2d6]">
+                  Charging Ecosystem Design & Operational Costing Analysis
                 </h1>
-                <p className="text-[18px] font-normal mt-3 lg:text-[17px] lg:font-normal 2xl:text-[20px] text-gray-600">
-                  The federal government offers the iZEV (Incentives for
-                  Zero-Emission Vehicles) program, which provides a purchase
-                  incentive of up to $5,000 for eligible battery electric
-                  vehicles (BEVs) and plug-in hybrid electric vehicles (PHEVs)
-                  with a manufacturer's suggested retail price (MSRP) below a
-                  certain threshold.
+                <p className="text-[16px] font-normal mt-3 lg:text-[17px] lg:font-normal 2xl:text-[20px] text-[#9e9e9c]">
+                  Do you have questions about how to design a charging and
+                  energy management system for your use case? Do you have an
+                  upcoming or existing project that needs a push or resulted in
+                  surprise costs? eMobility is a young industry and real
+                  expertise comes from time working in the trenches. Our
+                  experience can help structure and accelerate sustainable
+                  deployments.
                 </p>
               </div>
             </div>
@@ -45,28 +46,27 @@ const Services = () => {
         </div>
       </div>
       {/* second */}
-      <div className="mt-5  lg:flex justify-center">
+      <div className="mt-10  lg:flex justify-center">
         <div className="lg:w-[87rem] md:flex md:flex-row-reverse">
           <div className=" flex justify-center md:w-[50%]   ">
             <img
               src={services2}
-              className="w-[95%] h-[77%] md:w-[98%] lg:h-[80%]"
+              className="w-[95%] h-[77%] md:w-[98%] lg:h-[100%]"
             ></img>
           </div>
           <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
             <div className="w-[95%] text-center   md:h-[300px] flex items-center ">
               <div className=" h-[96%]">
-                <h1 className="text-[24px] lg:text-[28px] lg:font-medium font-normal text-gray-700">
-                  Provincial and Territorial Incentives
+                <h1 className="text-[24px] lg:text-[28px] lg:font-medium font-normal text-[#e2e2d6]">
+                  Marketing Concept Evaluation & Content Generation
                 </h1>
-                <p className="text-[18px] font-normal mt-3 lg:text-[17px] lg:font-normal 2xl:text-[20px] text-gray-600">
-                  Several provinces and territories also provide their own
-                  incentives in addition to the federal program. These
-                  incentives can include additional purchase rebates, reduced
-                  vehicle registration fees, and exemption from certain taxes or
-                  tolls. The availability and amounts of these incentives vary
-                  by province or territory, so it's important to check the
-                  specific programs in your region.
+                <p className="text-[16px] font-normal mt-3 lg:text-[17px] lg:font-normal 2xl:text-[20px] text-[#9e9e9c]">
+                  Are you from a parallel industry with questions about how to
+                  communicate eMobility concepts effectively to your existing or
+                  target customer base? We can help you identify meaningful
+                  talking points, convey concepts with intuitive and engaging
+                  informational illustrations, and ensure you are speaking with
+                  industry-specific language like a seasoned sprofessional.
                 </p>
               </div>
             </div>
@@ -74,26 +74,28 @@ const Services = () => {
         </div>
       </div>
       {/* three */}
-      <div className="mt-5  lg:flex justify-center">
+      <div className="mt-10  lg:flex justify-center">
         <div className="lg:w-[87rem] md:flex ">
           <div className=" flex justify-center md:w-[50%]   ">
             <img
               src={services3}
-              className="w-[95%] h-[77%] md:w-[98%] lg:h-[80%]"
+              className="w-[95%] h-[77%] md:w-[98%] lg:h-[100%]"
             ></img>
           </div>
           <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
             <div className="w-[95%] text-center   md:h-[300px] flex items-center ">
               <div className=" h-[96%]">
-                <h1 className="text-[24px] lg:text-[28px] lg:font-medium font-normal text-gray-700">
-                  Charging Infrastructure Incentives
+                <h1 className="text-[24px] lg:text-[28px] lg:font-medium font-normal text-[#e2e2d6]">
+                  Incentives Tracking, Applications Management & Compliance
                 </h1>
-                <p className="text-[18px] font-normal mt-3 lg:text-[17px] lg:font-normal 2xl:text-[20px] text-gray-600">
-                  The Canadian government has allocated funds to support the
-                  development and installation of electric vehicle charging
-                  stations across the country. These incentives are aimed at
-                  expanding the charging infrastructure and making it more
-                  accessible to EV owners.
+                <p className="text-[16px] font-normal mt-3 lg:text-[17px] lg:font-normal 2xl:text-[20px] text-[#9e9e9c]">
+                  Are you eager to bring eMobility or Alternative Energy
+                  Infrastructure to your real estate portfolio or fleet
+                  operating environment but overwhelmed by the equipment,
+                  installation or operating costs? We can help identify and
+                  apply for Government and Utility programs that can fund
+                  charging and energy projects and/or mitigate utility demand
+                  charges.
                 </p>
               </div>
             </div>
@@ -101,25 +103,27 @@ const Services = () => {
         </div>
       </div>
       {/* four */}
-      <div className="mt-5  lg:flex justify-center">
+      <div className="mt-10  lg:flex justify-center">
         <div className="lg:w-[87rem] md:flex md:flex-row-reverse">
           <div className=" flex justify-center md:w-[50%]   ">
             <img
               src={services4}
-              className="w-[95%] h-[77%] md:w-[98%] lg:h-[80%]"
+              className="w-[95%] h-[77%] md:w-[98%] lg:h-[100%]"
             ></img>
           </div>
           <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
             <div className="w-[95%] text-center   md:h-[300px] flex items-center ">
               <div className=" h-[96%]">
-                <h1 className="text-[24px] lg:text-[28px] lg:font-medium font-normal text-gray-700">
-                  Home Charging Incentives
+                <h1 className="text-[24px] lg:text-[28px] lg:font-medium font-normal text-[#e2e2d6]">
+                  Stay Updated on Emerging eMobility Topics and Technologies
                 </h1>
-                <p className="text-[18px] font-normal mt-3 lg:text-[17px] lg:font-normal 2xl:text-[20px] text-gray-600">
-                  Some provinces offer incentives for the installation of
-                  residential charging stations. These incentives may include
-                  rebates or grants to help cover the cost of purchasing and
-                  installing home charging equipment.
+                <p className="text-[16px] font-normal mt-3 lg:text-[17px] lg:font-normal 2xl:text-[20px] text-[#9e9e9c]">
+                  The eMobility sector is quickly evolving through component
+                  advancement, new safety standards, expanded coupler and
+                  communication protocols, accessibility and consumer-protection
+                  regulation, building and electrical code updates, and vehicle
+                  energy acceptance rates. We can bring you up to speed and keep
+                  you informed.
                 </p>
               </div>
             </div>
@@ -127,6 +131,60 @@ const Services = () => {
         </div>
       </div>
       {/* five */}
+      <div className="mt-10  lg:flex justify-center">
+        <div className="lg:w-[87rem] md:flex ">
+          <div className=" flex justify-center md:w-[50%]   ">
+            <img
+              src={services5}
+              className="w-[95%] h-[77%] md:w-[98%] lg:h-[100%]"
+            ></img>
+          </div>
+          <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
+            <div className="w-[95%] text-center   md:h-[300px] flex items-center ">
+              <div className=" h-[96%]">
+                <h1 className="text-[24px] lg:text-[28px] lg:font-medium font-normal text-[#e2e2d6]">
+                  Charging Product Design and Component Sourcing
+                </h1>
+                <p className="text-[16px] font-normal mt-3 lg:text-[17px] lg:font-normal 2xl:text-[20px] text-[#9e9e9c]">
+                  Do you need guidance on the impact or integration of emerging
+                  advanced technologies such as DC microgrids, RF LAN
+                  communication systems, high level communication protocols,
+                  autonomous vehicles and/or wireless charing? We can answer
+                  your questions and pair you with leading technology partners.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* six */}
+      <div className="mt-10  lg:flex justify-center">
+        <div className="lg:w-[87rem] md:flex md:flex-row-reverse">
+          <div className=" flex justify-center md:w-[50%]   ">
+            <img
+              src={services6}
+              className="w-[95%] h-[77%] md:w-[98%] lg:h-[100%]"
+            ></img>
+          </div>
+          <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
+            <div className="w-[95%] text-center   md:h-[300px] flex items-center ">
+              <div className=" h-[96%]">
+                <h1 className="text-[24px] lg:text-[28px] lg:font-medium font-normal text-[#e2e2d6]">
+                  Charging Product Certification and Accelerated Life Testing
+                </h1>
+                <p className="text-[16px] font-normal mt-3 lg:text-[17px] lg:font-normal 2xl:text-[20px] text-[#9e9e9c]">
+                  Are you bringing a new eMobility product to market,
+                  encountering issues with an existing eMobility product or
+                  looking to determine potential points of failure? We have
+                  experience in the product certification documentation and
+                  testing process and can help you obtain a license to label. We
+                  can also coordinate testing to operating limits and beyond.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
