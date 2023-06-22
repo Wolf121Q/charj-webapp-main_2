@@ -65,7 +65,7 @@ const Navbar = () => {
                     (homeRoute || darkBgRoute) && !scrolled
                       ? "text-white"
                       : "text-black hover:text-gray-800"
-                  } cursor-pointer   hover:bg-slate-100 hover:text-white hover:font-semibold font-semibold hover:bg-opacity-5 px-3 py-1 rounded-md uppercase`}
+                  } cursor-pointer   hover:bg-slate-100  hover:font-semibold font-semibold hover:bg-opacity-5 px-3 py-1 rounded-md uppercase`}
                 >
                   {item.title}
                 </Link>
@@ -81,7 +81,7 @@ const Navbar = () => {
               (homeRoute || darkBgRoute) && !scrolled
                 ? "text-white"
                 : "text-black"
-            } hidden lg:flex cursor-pointer hover:font-semibold font-semibold hover:bg-slate-100 hover:text-white hover:bg-opacity-5 px-3 py-1 rounded-md uppercase`}
+            } hidden lg:flex cursor-pointer hover:font-semibold font-semibold hover:bg-slate-100  hover:bg-opacity-5 px-3 py-1 rounded-md uppercase`}
           >
             Partner With Us
           </Link>

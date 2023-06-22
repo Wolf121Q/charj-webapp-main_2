@@ -61,7 +61,7 @@ function JoinUs() {
         borderRadius: '50%',
         outline: 'none',
         cursor: 'pointer',
-        color:"#fff",
+        color: "#fff",
         transition: 'background-color 0.3s ease',
     };
     return (
@@ -72,24 +72,26 @@ function JoinUs() {
                 <div className="col-span-2 hidden md:block"></div>
                 <div className="col-span-12 md:col-span-8 text-center px-6 py-14 rounded-lg  shadow-lg">
                     <h4 className="text-2xl">
-                        Engage With Us and See Positive Results
+                        Join Us & See Results
                     </h4>
                     <div className="pt-7">
                         <p className="text-lg">
-                            Every business needs a sound operating plan to thrive.
+                            We Have a Plan For You To Thrive.
                         </p>
                         <p className="text-lg">
-                            Contact us; together we will achieve your eMobility goals and objectives.
+                            Contact us, We Will Help You Achive Your Goals.
                         </p>
                     </div>
                     <h4 className="text-2xl pt-9">
-                        Charj, LLC
+                        CHARJ.co
                     </h4>
                     <p className="text-lg pt-7">
-                        Hartford, Connecticut, United States
+                        1115 Crestlawn Dr C1, Mississauga, ON L4W 1A7, Canada
                     </p>
                     <p className="text-lg pt-10">
-                        The Other "C" State Leading the Evolution of eMobility
+                        Cross Continent EV Revolution
+
+                        Drive All Roads in the US, Canada, Europe and Middle East
                     </p>
                     <div className="flex w-full justify-center gap-4">
                         <div className="pt-7 ">

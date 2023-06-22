@@ -1,8 +1,8 @@
 import React from "react";
-import services1 from "../../assets/images/services/services1.jpg";
-import services2 from "../../assets/images/services/services2.jpg";
-import services3 from "../../assets/images/services/services3.jpg";
-import services4 from "../../assets/images/services/services4.jpg";
+import services1 from "../../assets/images/subsidy/subsidy-1.webp";
+import services2 from "../../assets/images/subsidy/subsidy-2.webp";
+import services3 from "../../assets/images/subsidy/subsidy-3.jpg";
+import services4 from "../../assets/images/subsidy/subsidy-4.jpg";
 import services5 from "../../assets/images/services/services5.jpg";
 import services6 from "../../assets/images/services/services6.jpg";
 
