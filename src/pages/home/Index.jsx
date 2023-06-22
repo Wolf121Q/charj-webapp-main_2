@@ -75,11 +75,11 @@ import About from "../../components/about";
 import Footer from "../../components/footer";
 
 const Home = () => {
-  const isSmallScreen = useMediaQuery({ maxWidth: 600 });
+  const isSmallScreen = useMediaQuery({ maxWidth: 780 });
   const products = [
     {
       id: 1,
-      videoSrc: heroVideo,
+      videoSrc:electricVehicle ,
       title: "Cross Continent EV Revolution",
       subTitle: "Drive All Roads in the US, Canada, Europe and Middle East",
       orderUrl: "https://www.tesla.com/model3/design#overview",
@@ -87,7 +87,7 @@ const Home = () => {
     },
     {
       id: 2,
-      videoSrc: electricVehicle,
+      videoSrc: heroVideo,
       title: "Cross Continent EV Revolution",
       subTitle: "Drive All Roads in the US, Canada, Europe and Middle East",
       orderUrl: "https://www.tesla.com/model3/design#overview",
@@ -117,6 +117,8 @@ const Home = () => {
     {
       id: 6,
       imgSrc: ecoSystem,
+      imgSrcMobile: ecoSystem,
+
       orderUrl: "https://www.tesla.com/model3/design#overview",
       demoUrl: "https://www.tesla.com/drive?selectedModel=model3",
     },
@@ -128,15 +130,15 @@ const Home = () => {
         const hasVideo = !!item.videoSrc;
 
         if (!hasImage && !hasVideo) {
-          return null; // Skip rendering if no image or video on large screens
+          return null; 
         }
         return (
           <div className="h-[100vh] max-w-screen relative snap-center" key={index}>
             <div className="relative flex justify-center items-center h-screen w-full">
               {isSmallScreen && item.imgSrcMobile ? (
-                <img src={item.imgSrcMobile} alt="" className="h-[90vh] w-screen object-contain" />
+                <img src={item.imgSrcMobile} alt="" className="h-full w-screen object-contain" />
               ) : (
-                item.imgSrc && <img src={item.imgSrc} alt="" className="h-[90vh] w-[1200px] object-cover" />
+                item.imgSrc && <img src={item.imgSrc} alt="" className="h-full w-screen object-contain" />
               )}
               {item.videoSrc && <video src={item.videoSrc} autoPlay loop muted className="h-full w-screen object-cover" />}
               <div className="absolute top-20 w-full flex flex-col gap-3 text-center justify-center items-center text-white">
