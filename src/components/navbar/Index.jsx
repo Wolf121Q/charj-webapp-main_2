@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/charj-logo.png";
 import logoWhite from "../../assets/charj-logo-white.png";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [showMenu, setShowMenu] = useState(false);
   const router = useLocation();
 
@@ -40,7 +40,7 @@ const Navbar = () => {
           scrolled
             ? "bg-white shadow-sm text-black "
             : "bg-transparent text-white"
-        } fixed top-0 z-10 w-full max-w-full flex flex-row justify-between items-center transition-colors duration-300 mx-auto pr-5  `}
+        } fixed top-0 z-20 w-full max-w-full flex flex-row justify-between items-center transition-colors duration-300 mx-auto pr-5  `}
       >
         <div className={` cursor-pointer  h-full px-4 py-3  `}>
           {homeRoute ? (
@@ -92,7 +92,7 @@ const Navbar = () => {
         <span
           className={`${
             (homeRoute || darkBgRoute) && !scrolled
-              ? "text-white"
+              ? props.color
               : "text-black"
           } cursor-pointer lg:hidden flex`}
           onClick={() => setShowMenu(!showMenu)}
