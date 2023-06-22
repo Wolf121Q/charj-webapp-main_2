@@ -84,6 +84,9 @@ const ContactUs = () => {
               </p>
             </div>
             <h4 className="text-2xl pt-9">CHARJ.co</h4>
+            <p className="text-lg py-3">+1 437 438 5000</p>
+            
+            <p className="text-lg py-3">info@charj.co</p>
             <p className="text-lg pt-7">1115 Crestlawn Dr C1, Mississauga, ON L4W 1A7, Canada</p>
             <p className="text-lg pt-10">
 

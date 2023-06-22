@@ -31,7 +31,6 @@ const Navbar = () => {
     { id: 1, title: "Government Subsidy", url: "/government-subsidy" },
     { id: 2, title: "Services", url: "/services" },
     { id: 3, title: "Contact Us", url: "/contact-us" },
-    // { id: 4, title: "Partner With Us", url: "/join-us" },
     { id: 4, title: "FAQ's", url: "/faqs" },
   ];
   return (
@@ -44,13 +43,19 @@ const Navbar = () => {
         } fixed top-0 z-10 w-full max-w-full flex flex-row justify-between items-center transition-colors duration-300 mx-auto pr-5  `}
       >
         <div className={` cursor-pointer  h-full px-4 py-3  `}>
-          {scrolled ? (
-            <Link to="/">
-              <img src={logo} alt="logo" className="h-12 object-cover" />
-            </Link>
+          {homeRoute ? (
+            scrolled ? (
+              <Link to="/">
+                <img src={logo} alt="logo" className="h-12 object-cover" />
+              </Link>
+            ) : (
+              <Link to="/">
+                <img src={logoWhite} alt="logo" className="h-12 object-cover" />
+              </Link>
+            )
           ) : (
             <Link to="/">
-              <img src={logoWhite} alt="logo" className="h-12 object-cover" />
+              <img src={logo} alt="logo" className="h-12 object-cover" />
             </Link>
           )}
         </div>
@@ -62,7 +67,7 @@ const Navbar = () => {
                 <Link
                   to={item.url}
                   className={`${
-                    (homeRoute || darkBgRoute) && !scrolled
+                    homeRoute && !scrolled
                       ? "text-white"
                       : "text-black hover:text-gray-800"
                   } cursor-pointer   hover:bg-slate-100  hover:font-semibold font-semibold hover:bg-opacity-5 px-3 py-1 rounded-md uppercase`}
@@ -78,7 +83,7 @@ const Navbar = () => {
           <Link
             to="/join-us"
             className={`${
-              (homeRoute || darkBgRoute) && !scrolled
+              (homeRoute) && !scrolled
                 ? "text-white"
                 : "text-black"
             } hidden lg:flex cursor-pointer hover:font-semibold font-semibold hover:bg-slate-100  hover:bg-opacity-5 px-3 py-1 rounded-md uppercase`}
