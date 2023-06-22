@@ -63,18 +63,17 @@ const Navbar = () => {
         <div className="hidden lg:flex  gap-5">
           {menuItems.map((item) => {
             return (
-              <>
-                <Link
-                  to={item.url}
-                  className={`${
-                    homeRoute && !scrolled
-                      ? "text-white"
-                      : "text-black hover:text-gray-800"
-                  } cursor-pointer   hover:bg-slate-100  hover:font-semibold font-semibold hover:bg-opacity-5 px-3 py-1 rounded-md uppercase`}
-                >
-                  {item.title}
-                </Link>
-              </>
+              <Link
+              key={item.id}
+                to={item.url}
+                className={`${
+                  homeRoute && !scrolled
+                    ? "text-white"
+                    : "text-black hover:text-gray-800"
+                } cursor-pointer   hover:bg-slate-100  hover:font-semibold font-semibold hover:bg-opacity-5 px-3 py-1 rounded-md uppercase`}
+              >
+                {item.title}
+              </Link>
             );
           })}
         </div>
@@ -83,9 +82,7 @@ const Navbar = () => {
           <Link
             to="/join-us"
             className={`${
-              (homeRoute) && !scrolled
-                ? "text-white"
-                : "text-black"
+              homeRoute && !scrolled ? "text-white" : "text-black"
             } hidden lg:flex cursor-pointer hover:font-semibold font-semibold hover:bg-slate-100  hover:bg-opacity-5 px-3 py-1 rounded-md uppercase`}
           >
             Partner With Us

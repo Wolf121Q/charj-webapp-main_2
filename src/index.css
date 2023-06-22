@@ -12,9 +12,23 @@
 select:required:invalid {
   color: gray;
 }
+html {
+  scroll-snap-type: y mandatory;
+}
+.layer {
+  background-color: rgba(45, 45, 45, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;}
+.custom-toast {
+  background-color: black;
+  color: white;
+}
 
-.skew-logo {
-  transform: matrix(1, 0, -0.6, 1, 15, 0)
+.custom-toast .custom-toastify-logo {
+  color: red;
 }
 .custom-toast {
   background-color: black;
