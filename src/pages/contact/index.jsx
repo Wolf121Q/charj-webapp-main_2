@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import emailjs from 'emailjs-com';
 const ContactUs = () => {
   const [contactData, setContactData] = useState({
     name: "",
@@ -14,13 +14,42 @@ const ContactUs = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log("form submitted", contactData);
-    setContactData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+     const templateParams = {
+      from_name: contactData.name,
+      from_email: contactData.email,
+      from_phone:contactData.phone,
+      message: contactData.message,
+    };
+
+console.log("test email ___ ", templateParams)
+       emailjs
+      .send('service_g6o7fam', 'template_z6bjfcp', templateParams, '7Hq5OshcW8yrj2bxw')
+      .then((response) => {
+        console.log('Email sent successfully!', response.text);
+        alert("data submitted successfully");
+        // Reset form
+        setContactData({
+         name:'',
+         email:'',
+         phone:'',
+         message:""
+
+         })
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+      });
+
+
+
+
+    // console.log("form submitted", contactData);
+    // setContactData({
+    //   name: "",
+    //   email: "",
+    //   phone: "",
+    //   message: "",
+    // });
   };
   return (
     <div className="flex justify-center py-20">
@@ -122,7 +151,7 @@ const ContactUs = () => {
               </div>
 
               <div className="flex flex-col  items-center gap-5 text-gray-500">
-                <button className="bg-black text-base text-[#C6C6C6] tracking-wider font-bold px-6 py-3 border border-black rounded-md">
+                <button className="bg-black text-base text-[#C6C6C6] tracking-wider font-bold px-6 py-3 border border-black rounded-md" onClick={()=>handleFormSubmit()}>
                   SEND
                 </button>
 
