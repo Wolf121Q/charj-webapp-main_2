@@ -1,17 +1,17 @@
 import React from "react";
 import heroVideo from "../../assets/images/car-model.mp4";
-import homeVideo from "../../assets/images/Electric.webm"
+import homeVideo from "../../assets/images/Electric.webm";
 import { Link } from "react-router-dom";
 import IndustryInsights from "../../components/learnmore";
 import About from "../../components/about";
 
 const Home = () => {
-  
   return (
     <>
       <div className="h-[100vh] max-w-screen relative ">
         <div className="relative flex justify-center items-center h-screen w-full ">
-          
+          <div className="bg-black bg-blend-darken w-full h-screen absolute  opacity-80"></div>
+
           <video
             src={heroVideo}
             autoPlay
@@ -37,20 +37,20 @@ const Home = () => {
       </div>
 
       <div className="bg-black py-20 max-w-screen">
-          <div className="bg-[#000000] h-full  flex justify-center">
-            <video
-              src={homeVideo}
-              autoPlay
-              loop
-              muted
-              controls
-              className="h-full w-[1200px] object-cover"
-            />
-          </div>
+        <div className="bg-[#000000] h-full  flex justify-center">
+          <video
+            src={homeVideo}
+            autoPlay
+            loop
+            muted
+            controls
+            className="h-full w-[1200px] object-cover"
+          />
+        </div>
       </div>
 
       <IndustryInsights />
-      {/* <About /> */}
+      <About />
     </>
   );
 };

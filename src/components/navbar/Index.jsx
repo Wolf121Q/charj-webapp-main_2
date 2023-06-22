@@ -31,8 +31,11 @@ const Navbar = () => {
     router.pathname === "/charj-network";
 
   const menuItems = [
-    { id: 1, title: "Contact Us", url: "/contact-us" },
-    { id: 2, title: "FAQ's", url: "/faqs" },
+    { id: 1, title: "Government Subsidy", url: "/government-subsidy" },
+    { id: 2, title: "Services", url: "/services" },
+    { id: 3, title: "Contact Us", url: "/contact-us" },
+    // { id: 4, title: "Partner With Us", url: "/join-us" },
+    { id: 4, title: "FAQ's", url: "/faqs" },
   ];
   return (
     <>
@@ -57,71 +60,50 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="flex gap-5 text-[1rem] font-semibold">
-          <div className="hidden lg:flex gap-5">
-            <Link
-              to="/services"
-              className={`${
-                (homeRoute || darkBgRoute) && !scrolled
-                  ? "text-white"
-                  : "text-black"
-              } cursor-pointer hover:bg-slate-100 hover:text-gray-800 px-3 py-1 rounded-md`}
-            >
-              Services
-            </Link>
-            <Link
-              to="/padestal-energy"
-              className={`${
-                (homeRoute || darkBgRoute) && !scrolled
-                  ? "text-white"
-                  : "text-black"
-              } cursor-pointer hover:bg-slate-100 hover:text-gray-800 px-3 py-1 rounded-md`}
-            >
-              The Padestal Energy
-            </Link>
+       
 
-            <Link
-              to="/charj-network"
-              className={`${
-                (homeRoute || darkBgRoute) && !scrolled
-                  ? "text-white"
-                  : "text-black"
-              } cursor-pointer hover:bg-slate-100 hover:text-gray-800 px-3 py-1 rounded-md`}
-            >
-              The Charge Network
-            </Link>
-            <Link
-              to="/join-us"
-              className={`${
-                (homeRoute || darkBgRoute) && !scrolled
-                  ? "text-white"
-                  : "text-black"
-              } cursor-pointer hover:bg-slate-100 hover:text-gray-800 px-3 py-1 rounded-md`}
-            >
-              Partner With Us
-            </Link>
-          </div>
-          <button
-            className={`${
-              (homeRoute || darkBgRoute) && !scrolled
-                ? "text-black bg-gray-200 hover:bg-gray-800 hover:text-white"
-                : "text-white bg-gray-700 hover:bg-gray-800 hover:text-white"
-            }  cursor-pointer hidden lg:flex  px-3 py-1 rounded-md`}
-            onClick={() => setShowMenu(!showMenu)}
-          >
-            Menu
-          </button>
-          <span
+        <div className="hidden lg:flex  gap-5">
+          {menuItems.map((item) => {
+            return (
+              <>
+                <Link
+                  to={item.url}
+                  className={`${
+                    (homeRoute || darkBgRoute) && !scrolled
+                      ? "text-white"
+                      : "text-black"
+                  } cursor-pointer hover:font-semibold hover:bg-slate-100 hover:text-white hover:bg-opacity-5 px-3 py-1 rounded-md`}
+                >
+                  {item.title}
+                </Link>
+              </>
+            );
+          })}
+        </div>
+
+        <div>
+          <Link
+            to="/join-us"
             className={`${
               (homeRoute || darkBgRoute) && !scrolled
                 ? "text-white"
                 : "text-black"
-            } cursor-pointer lg:hidden flex`}
-            onClick={() => setShowMenu(!showMenu)}
+            } hidden lg:flex cursor-pointer hover:font-semibold hover:bg-slate-100 hover:text-white hover:bg-opacity-5 px-3 py-1 rounded-md`}
           >
-            <FaBars size={20} className="my-3" />
-          </span>
+            Partner With Us
+          </Link>
         </div>
+
+        <span
+          className={`${
+            (homeRoute || darkBgRoute) && !scrolled
+              ? "text-white"
+              : "text-black"
+          } cursor-pointer lg:hidden flex`}
+          onClick={() => setShowMenu(!showMenu)}
+        >
+          <FaBars size={20} className="my-3" />
+        </span>
         <Menu
           menuItems={menuItems}
           showMenu={showMenu}
