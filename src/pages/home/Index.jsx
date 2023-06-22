@@ -66,7 +66,7 @@ const Home = () => {
               </div>
             </div>
             {/* {index === products.length - 1 && <Footer />} */}
-            <div class="layer">
+            <div className="layer">
             </div>
           </div>
         );

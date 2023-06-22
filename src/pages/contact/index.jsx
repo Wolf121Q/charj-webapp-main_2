@@ -76,13 +76,13 @@ console.log("test email ___ ", templateParams)
           </div>
           <div className="flex justify-center p-4">
             <form onSubmit={handleFormSubmit}>
-              <div class="w-full  px-2 mb-4">
-                <div class="relative">
+              <div className="w-full  px-2 mb-4">
+                <div className="relative">
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    class="block  px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-700  rounded-md border border-gray-400 appearance-none focus:outline-none peer"
+                    className="block  px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-700  rounded-md border border-gray-400 appearance-none focus:outline-none peer"
                     placeholder=" "
                     value={contactData.name}
                     onChange={handleInputChange}
@@ -90,19 +90,19 @@ console.log("test email ___ ", templateParams)
                   />
                   <label
                     for="name"
-                    class="absolute text-sm text-gray-700  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-gray-700  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+                    className="absolute text-sm text-gray-700  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-gray-700  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
                   >
                     Name*
                   </label>
                 </div>
               </div>
-              <div class="w-full  px-2 mb-4">
-                <div class="relative">
+              <div className="w-full  px-2 mb-4">
+                <div className="relative">
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    class="block  px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-700  rounded-md border border-gray-400 appearance-none focus:outline-none peer"
+                    className="block  px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-700  rounded-md border border-gray-400 appearance-none focus:outline-none peer"
                     placeholder=" "
                     value={contactData.email}
                     onChange={handleInputChange}
@@ -110,37 +110,37 @@ console.log("test email ___ ", templateParams)
                   />
                   <label
                     for="email"
-                    class="absolute text-sm text-gray-700  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-gray-700  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+                    className="absolute text-sm text-gray-700  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-gray-700  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
                   >
                     Email*
                   </label>
                 </div>
               </div>
-              <div class="w-full  px-2 mb-4">
-                <div class="relative">
+              <div className="w-full  px-2 mb-4">
+                <div className="relative">
                   <input
                     type="number"
                     id="phone"
                     name="phone"
-                    class="block  px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-700  rounded-md border border-gray-400 appearance-none focus:outline-none peer"
+                    className="block  px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-700  rounded-md border border-gray-400 appearance-none focus:outline-none peer"
                     placeholder=" "
                     value={contactData.phone}
                     onChange={handleInputChange}
                   />
                   <label
                     for="phone"
-                    class="absolute text-sm text-gray-700  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-gray-700  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+                    className="absolute text-sm text-gray-700  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-gray-700  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
                   >
                     Phone
                   </label>
                 </div>
               </div>
-              <div class="w-full px-2 mb-4">
-                <div class="relative">
+              <div className="w-full px-2 mb-4">
+                <div className="relative">
                   <textarea
                     id="interest"
                     name="message"
-                    class="border border-gray-400  block w-full py-2 px-4 placeholder-gray-700 rounded-md text-gray-700 focus:outline-none"
+                    className="border border-gray-400  block w-full py-2 px-4 placeholder-gray-700 rounded-md text-gray-700 focus:outline-none"
                     rows="8"
                     placeholder="I'm interested in*"
                     value={contactData.message}
