@@ -40,7 +40,7 @@ const Navbar = () => {
           scrolled
             ? "bg-white shadow-sm text-black "
             : "bg-transparent text-white"
-        } fixed top-0 z-10 w-full max-w-full flex flex-row justify-between items-center transition-colors duration-300 mx-auto pr-5  `}
+        } fixed top-0 z-20 w-full max-w-full flex flex-row justify-between items-center transition-colors duration-300 mx-auto pr-5  `}
       >
         <div className={` cursor-pointer  h-full px-4 py-3  `}>
           {homeRoute ? (
