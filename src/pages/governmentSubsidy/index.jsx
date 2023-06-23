@@ -8,11 +8,11 @@ const GovernmentSubsidy = () => {
   return (
     <div className=" bg-white pt-[120px] pb-[120px]">
       <div className="text-center ">
-        <p className="text-[32px] font-semibold 2xl:text-[50px] text-gray-900">
-          GOVERNMENT SUBSIDY
+        <p className="text-5xl font-semibold  text-[#2b5310]">
+          Government Subsidy
         </p>
         <div className="flex justify-center">
-          <hr className="w-[70px] border-[1.5px] mt-5"></hr>
+          <hr className="w-[100px] border-[1.5px] mt-1 mb-5"></hr>
         </div>
       </div>
       <div className="mt-5  lg:flex justify-center">
@@ -26,10 +26,10 @@ const GovernmentSubsidy = () => {
           <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
             <div className="w-[95%] text-center   md:h-[300px] flex items-center ">
               <div className=" h-[96%] flex flex-col items-center">
-                <h1 className="text-[24px] lg:text-[28px] lg:font-medium font-normal text-gray-700">
+                <h1 className="text-2xl lg:font-medium font-normal text-[#338000]">
                   Federal iZEV Program
                 </h1>
-                <p className="text-[18px] font-normal mt-3 lg:text-[17px] lg:font-normal 2xl:text-[20px] text-gray-600">
+                <p className="text-md font-normal mt-3 lg:text-xl lg:font-normal 2xl:text-[16px] text-[#3d592e]">
                   The federal government offers the iZEV (Incentives for
                   Zero-Emission Vehicles) program, which provides a purchase
                   incentive of up to $5,000 for eligible battery electric
@@ -54,10 +54,10 @@ const GovernmentSubsidy = () => {
           <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
             <div className="w-[95%] text-center   md:h-[300px] flex items-center ">
               <div className=" h-[96%]">
-                <h1 className="text-[24px] lg:text-[28px] lg:font-medium font-normal text-gray-700">
+                <h1 className="text-2xl lg:font-medium font-normal text-[#338000]">
                   Provincial and Territorial Incentives
                 </h1>
-                <p className="text-[18px] font-normal mt-3 lg:text-[17px] lg:font-normal 2xl:text-[20px] text-gray-600">
+                <p className="text-md font-normal mt-3 lg:text-xl lg:font-normal 2xl:text-[16px] text-[#3d592e]">
                   Several provinces and territories also provide their own
                   incentives in addition to the federal program. These
                   incentives can include additional purchase rebates, reduced
@@ -83,10 +83,10 @@ const GovernmentSubsidy = () => {
           <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
             <div className="w-[95%] text-center   md:h-[300px] flex items-center ">
               <div className=" h-[96%]">
-                <h1 className="text-[24px] lg:text-[28px] lg:font-medium font-normal text-gray-700">
+                <h1 className="text-2xl lg:font-medium font-normal text-[#338000]">
                   Charging Infrastructure Incentives
                 </h1>
-                <p className="text-[18px] font-normal mt-3 lg:text-[17px] lg:font-normal 2xl:text-[20px] text-gray-600">
+                <p className="text-md font-normal mt-3 lg:text-xl lg:font-normal 2xl:text-[16px] text-[#3d592e]">
                   The Canadian government has allocated funds to support the
                   development and installation of electric vehicle charging
                   stations across the country. These incentives are aimed at
@@ -110,10 +110,10 @@ const GovernmentSubsidy = () => {
           <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
             <div className="w-[95%] text-center   md:h-[300px] flex items-center ">
               <div className=" h-[96%]">
-                <h1 className="text-[24px] lg:text-[28px] lg:font-medium font-normal text-gray-700">
+                <h1 className="text-2xl lg:font-medium font-normal text-[#338000]">
                   Home Charging Incentives
                 </h1>
-                <p className="text-[18px] font-normal mt-3 lg:text-[17px] lg:font-normal 2xl:text-[20px] text-gray-600">
+                <p className="text-md font-normal mt-3 lg:text-xl lg:font-normal 2xl:text-[16px] text-[#3d592e]">
                   Some provinces offer incentives for the installation of
                   residential charging stations. These incentives may include
                   rebates or grants to help cover the cost of purchasing and

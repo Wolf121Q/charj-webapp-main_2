@@ -23,7 +23,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/government-subsidy" element={<GovernmentSubsidy />} />
       </Routes>
-      <Footer className={isHomePage ? "mt-[-70px] relative z-10" : ""} isHomePage={isHomePage} />
+      <Footer isHomePage={isHomePage} />
     </>
   );
 }
