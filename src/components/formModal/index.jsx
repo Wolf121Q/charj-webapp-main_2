@@ -2,20 +2,29 @@ import React, { useRef, useState } from "react";
 import InputMask from 'react-input-mask';
 import { RxCross2 } from "react-icons/rx";
 import firestore from "../../firebase";
-import { states } from "../../data/statesData";
+import { chargerCategory, country, interestLevel, partnershipWays, states } from "../../data/statesData";
 import getZipCode from "../getZipCode";
 import checkedImg from "../../assets/images/checked.png"
 import { InvestmentData, PartnerShipData } from "../../data/partnershipOptionsData";
+import { Saudiregions, UKstates, canada_provinces, emirates } from "../../data/states";
 function FormModal(props) {
+  const [states, setStates] = useState([]);
   const messageref = useRef();
   //const reff = collection(getFirestore,"users");
   const [formValues, setFormValues] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     partnership: "",
+    chargerCategory: "",
+    country: "",
     state: "",
+    city: "",
     zipCode: "",
+    interestLevel: "",
+    partnershipWays: "",
+    support: ""
   });
 
   const [open, setOpen] = useState(false);
@@ -33,9 +42,26 @@ function FormModal(props) {
   const handleInputChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    const zipCode = getZipCode(value.toLowerCase().replace(/\s+/g, ''));
-    setFormValues((values) => ({ ...values, [name]: value, zipCode: zipCode }));
+    // const zipCode = getZipCode(value.toLowerCase().replace(/\s+/g, ''));
+    setFormValues((values) => ({ ...values, [name]: value }));
+    console.log("formValues", formValues.country);
+    if (name === 'country') {
+      let availableStates = [];
+
+      if (value === 'Canada') {
+        availableStates = canada_provinces;
+      } else if (value === 'UK') {
+        availableStates = UKstates;
+      } else if (value === 'Saudi Arabia') {
+        availableStates = Saudiregions;
+      } else if (value === 'UAE') {
+        availableStates = emirates;
+      }
+
+      setStates(availableStates);
+    }
   };
+
 
   const saveData = () => {
     // Get a reference to the collection you want to store data in
@@ -135,86 +161,210 @@ function FormModal(props) {
                 >
 
                   <h4 className="text-2xl pb-7 capitalize">{props.title}</h4>
-                  <div className="mb-4">
-                    <input
-                      className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      id="name"
-                      type="text"
-                      name="name"
-                      value={formValues.name}
-                      onChange={handleInputChange}
-                      placeholder="Name"
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="mb-6">
+                      <input
+                        className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="name"
+                        type="text"
+                        name="firstName"
+                        value={formValues.firstName}
+                        onChange={handleInputChange}
+                        placeholder="First Name"
+                      />
+                    </div>
+                    <div className="mb-6">
+                      <input
+                        className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="name"
+                        type="text"
+                        name="lastName"
+                        value={formValues.lastName}
+                        onChange={handleInputChange}
+                        placeholder="Last Name"
+                      />
+                    </div>
                   </div>
-                  <div className="mb-6">
-                    <input
-                      className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      id="email"
-                      type="email"
-                      name="email"
-                      value={formValues.email}
-                      onChange={handleInputChange}
-                      placeholder="Email"
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="mb-6">
+                      <input
+                        className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="email"
+                        type="email"
+                        name="email"
+                        value={formValues.email}
+                        onChange={handleInputChange}
+                        placeholder="Email"
+                      />
+                    </div>
+                    <div className="mb-6">
+                      <InputMask
+                        className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        mask="(999) 999-9999"
+                        placeholder="(123) 456-7890"
+                        name="phone"
+                        value={formValues.phone}
+                        maskChar="_"
+                        onChange={handleInputChange}
+                      />
+                    </div>
                   </div>
-                  <div className="mb-6">
-                    <InputMask
-                      className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      mask="(999) 999-9999"
-                      placeholder="(123) 456-7890"
-                      name="phone"
-                      value={formValues.phone}
-                      maskChar="_"
-                      onChange={handleInputChange}
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="mb-6">
+                      <select
+                        id="partnership"
+                        name="partnership"
+                        className="shadow border rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                        value={formValues.partnership}
+                        onChange={handleInputChange}
+                        required
+                      >
+                        <option value="" disabled hidden>
+                          Select Partnership Type
+                        </option>
+                        {PartnerShipData.map((partnership, index) =>
+                          <option key={index} value={partnership.category}>{partnership.category}</option>
+                        )}
+                      </select>
+                    </div>
+                    <div className="mb-6">
+                      <select
+                        id="chargerCategory"
+                        name="chargerCategory"
+                        className="shadow border rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                        value={formValues.chargerCategory}
+                        onChange={handleInputChange}
+                        required
+                      >
+                        <option value="" disabled hidden>
+                          Select Charger Category
+                        </option>
+                        {chargerCategory.map((charger, index) =>
+                          <option key={index} value={charger.category}>{charger.category}</option>
+                        )}
+                      </select>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="mb-6">
+                      <select
+                        id="country"
+                        name="country"
+                        className="shadow border rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                        value={formValues.country}
+                        onChange={handleInputChange}
+                        required
+                      >
+                        <option className="text-gray-700" value="" disabled hidden>
+                          Select a country
+                        </option>
+                        {country.map((country, index) =>
+                          <option className="text-gray-700" key={index} value={country.name}>{country.name}</option>
+                        )}
+                      </select>
+
+                    </div>
+                    <div className="mb-6">
+                      <select
+                        id="state"
+                        name="state"
+                        className="shadow border rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                        value={formValues.state}
+                        onChange={handleInputChange}
+                        required
+                      >
+                        <option className="text-gray-700" value="" disabled hidden>
+                          {formValues.country === 'Canada' ? 'Select a province' : 'Select a state'}
+                        </option>
+                        {states.map((state, index) =>
+                          <option className="text-gray-700" key={index} value={state.name}>{state.name}</option>
+                        )}
+                      </select>
+
+                    </div>
+                    <div className="mb-6">
+
+                      <input
+                        className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="city"
+                        type="text"
+                        name="city"
+                        value={formValues.city}
+                        onChange={handleInputChange}
+                        placeholder="city"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 ">
+                    <div className="mb-6">
+                      <input
+                        id="zipcode"
+                        name="zipcode"
+                        type="number"
+                        className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        placeholder={`${formValues.country === 'Canada' ? 'Postcode' : 'Zipcode'}`}
+                        value={formValues.zipCode}
+                      />
+                    </div>
+
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="mb-6">
+                      <select
+                        id="interestLevel"
+                        name="interestLevel"
+                        className="shadow border rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                        value={formValues.interestLevel}
+                        onChange={handleInputChange}
+                        required
+                      >
+                        <option className="text-gray-700" value="" disabled hidden>
+                          Interest Level
+                        </option>
+                        {interestLevel.map((interest, index) =>
+                          <option className="text-gray-700" key={index} value={interest.level}>{interest.level}</option>
+                        )}
+                      </select>
+
+                    </div>
+                    <div className="mb-6">
+                      <select
+                        id="partnershipWays"
+                        name="partnershipWays"
+                        className="shadow border rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                        value={formValues.partnershipWays}
+                        onChange={handleInputChange}
+                        required
+                      >
+                        <option className="text-gray-700" value="" disabled hidden>
+                          Ways of PartnerShip
+                        </option>
+                        {partnershipWays.map((partnership, index) =>
+                          <option className="text-gray-700" key={index} value={partnership.partnershipWay}>{partnership.partnershipWay}</option>
+                        )}
+                      </select>
+
+                    </div>
+                    <div className="mb-6">
+                      <select
+                        id="support"
+                        name="support"
+                        className="shadow border rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                        value={formValues.support}
+                        onChange={handleInputChange}
+                        required
+                        disabled
+                      >
+                        <option className="text-gray-700" value="" disabled={formValues.country !== 'Canada'} hidden>
+                          {formValues.country === "Canada" ? "Do you need support?" : "Not right now in the US"}
+                        </option>
+                        <option className="text-gray-700" value="yes">Yes</option>
+                        <option className="text-gray-700" value="no">No</option>
+                      </select>
+                    </div>
                   </div>
 
-                  <div className="mb-6">
-                    <select
-                      id="partnership"
-                      name="partnership"
-                      className="shadow border rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                      value={formValues.partnership}
-                      onChange={handleInputChange}
-                      required
-                    >
-                      <option value="" disabled hidden>
-                        Select Partnership Type
-                      </option>
-                      {PartnerShipData.map((partnership, index) =>
-                        <option key={index} value={partnership.category}>{partnership.category}</option>
-                      )}
-                    </select>
-                  </div>
-                  <div className="mb-6">
-                    <select
-                      id="state"
-                      name="state"
-                      className="shadow border rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                      value={formValues.state}
-                      onChange={handleInputChange}
-                      required
-                    >
-                      <option className="text-gray-700" value="" disabled hidden>
-                        Select a state
-                      </option>
-                      {states.map((state, index) =>
-                        <option className="text-gray-700" key={index} value={state.name}>{state.name}</option>
-                      )}
-                    </select>
 
-                  </div>
-                  <div className="mb-6">
-                    <input
-                      id="zipcode"
-                      name="zipcode"
-                      type="text"
-                      className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      placeholder="zipcode"
-                      value={formValues.zipCode}
-                      readOnly
-                    />
-                  </div>
                   <div className="mb-6">
                     <p className="text-[#595959] text-sm">
                       This site is protected by reCAPTCHA and the Google Privacy
