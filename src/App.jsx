@@ -11,10 +11,10 @@ import GovernmentSubsidy from "./pages/governmentSubsidy";
 
 function App() {
   const location = useLocation();
-  const isHomePage = location.pathname === "/"
+  const isHomePage = location.pathname === "/";
   return (
     <>
-      <Navbar />
+    <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/join-us" element={<JoinUs />} />
