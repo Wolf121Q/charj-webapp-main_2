@@ -103,6 +103,8 @@ function FormModal(props) {
       setOpen(false);
       props.closePartner()
     }, 1000);
+
+
   };
 
   const modalStyle = {
@@ -215,16 +217,10 @@ function FormModal(props) {
                         id="partnership"
                         name="partnership"
                         className="shadow border rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                        value={formValues.partnership}
-                        onChange={handleInputChange}
-                        required
+                        value="evchargers"
+                        disabled
                       >
-                        <option value="" disabled hidden>
-                          Select Partnership Type
-                        </option>
-                        {PartnerShipData.map((partnership, index) =>
-                          <option key={index} value={partnership.category}>{partnership.category}</option>
-                        )}
+                        <option value="evchargers">EV Chargers</option>
                       </select>
                     </div>
                     <div className="mb-6">
@@ -298,35 +294,18 @@ function FormModal(props) {
                   <div className="grid grid-cols-1 ">
                     <div className="mb-6">
                       <input
-                        id="zipcode"
-                        name="zipcode"
+                        id="zipCode"
+                        name="zipCode"
                         type="number"
                         className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         placeholder={`${formValues.country === 'Canada' ? 'Postcode' : 'Zipcode'}`}
                         value={formValues.zipCode}
+                        onChange={handleInputChange}
                       />
                     </div>
 
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="mb-6">
-                      <select
-                        id="interestLevel"
-                        name="interestLevel"
-                        className="shadow border rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                        value={formValues.interestLevel}
-                        onChange={handleInputChange}
-                        required
-                      >
-                        <option className="text-gray-700" value="" disabled hidden>
-                          Interest Level
-                        </option>
-                        {interestLevel.map((interest, index) =>
-                          <option className="text-gray-700" key={index} value={interest.level}>{interest.level}</option>
-                        )}
-                      </select>
-
-                    </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="mb-6">
                       <select
                         id="partnershipWays"
@@ -353,7 +332,7 @@ function FormModal(props) {
                         value={formValues.support}
                         onChange={handleInputChange}
                         required
-                        disabled
+                        disabled={formValues.country !== "Canada"}
                       >
                         <option className="text-gray-700" value="" disabled={formValues.country !== 'Canada'} hidden>
                           {formValues.country === "Canada" ? "Do you need support?" : "Not right now in the US"}

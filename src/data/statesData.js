@@ -195,34 +195,12 @@ export const partnershipWays = [
 
 export const chargerCategory = [
     {
-        category: "IP66 Portable ev charger",
+        category: "Level 1",
     },
     {
-        category: "AC EV Charger with Cable Commercial",
+        category: "Level 2",
     },
     {
-        category: "AC EV Charger with Cable Residential",
-    },
-    {
-        category: "AC EV Charger with Shutter Commercial",
-    },
-    {
-        category: "AC EV Charger with Shutter Residential",
-    }, {
-        category: "Dual Socket Smart EV Charger Residential",
-    }, {
-        category: "Dual Socket Smart EV Charger Commercial",
-    }, {
-        category: "AC EV Wallbox with T2s Socket Commercial",
-    }, {
-        category: "AC EV Wallbox with T2s Socket Residential",
-    }, {
-        category: "2 Guns DC EV Charging Station BDC Commercial",
-    }, {
-        category: "2 Guns DC EV Charging Station BDC Residential",
-    }, {
-        category: "3 Guns DC EV Charging Station BDC Residential",
-    }, {
-        category: "3 Guns DC EV Charging Station BDC Residential",
+        category: "Level 3",
     },
 ]
