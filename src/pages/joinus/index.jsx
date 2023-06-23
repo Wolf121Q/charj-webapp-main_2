@@ -1,6 +1,9 @@
 import { useState } from "react";
 import FormModal from "../../components/formModal";
 import InvestModal from "../../components/investModal";
+import { AiOutlinePhone } from "react-icons/ai";
+import { HiOutlineMail } from "react-icons/hi";
+import { MdLocationOn } from "react-icons/md";
 
 function JoinUs() {
   const [invest, setInvest] = useState(false);
@@ -64,31 +67,43 @@ function JoinUs() {
     transition: "background-color 0.3s ease",
   };
   return (
-    <div className="container mx-auto py-24">
-      <div className="py-10">
-        <h2 className="text-5xl text-center">Join Us</h2>
-      </div>
-      <div className="grid grid-cols-12 gap-4 px-4 md:px-0">
-        <div className="col-span-2 hidden md:block"></div>
-        <div className="col-span-12 md:col-span-8 text-center px-6 py-14 rounded-lg  shadow-lg">
-          <h4 className="text-2xl">Join Us & See Results</h4>
-          <div className="pt-7">
-            <p className="text-lg">We Have a Plan For You To Thrive.</p>
-            <p className="text-lg">
-              Contact us, We Will Help You Achive Your Goals.
+    <div className="flex justify-center py-20">
+      <div className="md:w-2/3 w-full">
+        <div className="bg-white rounded-lg shadow-lg border-2 text-center p-8">
+          <div className="p-4">
+            <h4 className="text-2xl font-semibold">Join Us & See Results</h4>
+            <div className="pt-7">
+              <p className="text-lg ">We Have a Plan For You To Thrive.</p>
+              <p className="text-lg">
+                Contact us, We Will Help You Achive Your Goals
+              </p>
+            </div>
+            <div className="w-full flex justify-center">
+              <div className="flex flex-col lg:flex-row gap-3 lg:justify-between my-5 md:max-w-4xl">
+                <div className=" py-5 px-5 shadow-md border flex flex-col gap-5 items-center w-full lg:max-w-[15rem]">
+                  <AiOutlinePhone className="text-3xl" />
+                  <p className="text-md font-normal">+1 437 438 5000</p>
+                </div>
+
+                <div className=" py-5 px-5 shadow-md border flex flex-col gap-5 items-center w-full lg:max-w-[15rem]">
+                  <MdLocationOn className="text-3xl" />
+                  <p className="text-md font-normal">
+                    1115 Crestlawn Dr C1, Mississauga, ON L4W 1A7, Canada
+                  </p>
+                </div>
+
+                <div className=" py-5 px-5 shadow-md border flex flex-col gap-5 items-center w-full lg:max-w-[15rem]">
+                  <HiOutlineMail className="text-3xl" />
+                  <p className="text-md font-normal">info@charj.co</p>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-lg py-5">
+              Cross Continent EV Revolution Drive All Roads in the US, Canada,
+              Europe and Middle East
             </p>
           </div>
-          <h4 className="text-2xl pt-9">CHARJ.co</h4>
-          <p className="text-lg py-3">+1 437 438 5000</p>
-
-          <p className="text-lg py-3">info@charj.co</p>
-          <p className="text-lg pt-7">
-            1115 Crestlawn Dr C1, Mississauga, ON L4W 1A7, Canada
-          </p>
-          <p className="text-lg pt-10">
-            Cross Continent EV Revolution Drive All Roads in the US, Canada,
-            Europe and Middle East
-          </p>
           <div className="flex w-full justify-center gap-4">
             <div className="pt-7 ">
               <div
