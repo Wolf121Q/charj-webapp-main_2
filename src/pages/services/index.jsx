@@ -9,11 +9,11 @@ const Services = () => {
   return (
     <div className=" bg-white pt-[120px] pb-[120px]">
       <div className="text-center ">
-        <p className="text-[40px] font-semibold 2xl:text-[60px] text-gray-900">
+        <p className="text-5xl font-semibold  text-[#2b5310]">
           Our Services
         </p>
         <div className="flex justify-center">
-          <hr className="w-[70px] border-[1.5px] mt-5"></hr>
+          <hr className="w-[100px] border-[1.5px] mt-1 mb-5"></hr>
         </div>
       </div>
       <div className="lg:flex justify-center">
@@ -27,10 +27,10 @@ const Services = () => {
           <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
             <div className="w-[95%] text-center   flex items-center ">
               <div className=" ">
-                <h1 className="text-[22px] lg:text-[24] lg:font-medium font-normal text-gray-700">
-                  Extensive Charging Network:
+                <h1 className="text-2xl lg:font-medium font-normal text-[#338000]">
+                  Extensive Charging Network
                 </h1>
-                <p className="text-[12px] font-normal mt-3 lg:text-[14px] lg:font-normal 2xl:text-[16px] text-gray-600">
+                <p className="text-md font-normal mt-3 lg:text-xl lg:font-normal 2xl:text-[16px] text-[#3d592e]">
                   we take pride in our extensive charging network that spans
                   across cities, highways, and key destinations. Our goal is to
                   ensure that electric vehicle (EV) owners have easy and
@@ -61,10 +61,10 @@ const Services = () => {
           <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
             <div className="w-[95%] text-center   flex items-center ">
               <div className=" h-[96%]">
-                <h1 className="text-[22px] lg:text-[24] lg:font-medium font-normal text-gray-700">
-                  Fast and Efficient Charging:
+                <h1 className="text-2xl lg:font-medium font-normal text-[#338000]">
+                  Fast and Efficient Charging
                 </h1>
-                <p className="text-[12px] font-normal mt-3 lg:text-[14px] lg:font-normal 2xl:text-[16px] text-gray-600">
+                <p className="text-md font-normal mt-3 lg:text-xl lg:font-normal 2xl:text-[16px] text-[#3d592e]">
                   Our charging infrastructure is equipped with high-powered
                   chargers designed to deliver exceptional charging speeds. With
                   advanced technology and optimized power delivery, you can
@@ -86,15 +86,15 @@ const Services = () => {
             <img
               src={tailored}
               className="w-[95%]  md:w-[98%] h-[100%] object-cover"
-            ></img>
+            ></img> 
           </div>
           <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
             <div className="w-[95%] text-center   flex items-center ">
               <div className=" h-[96%]">
-                <h1 className="text-[22px] lg:text-[24] lg:font-medium font-normal text-gray-700">
-                  Tailored Charging Solutions:
+                <h1 className="text-2xl lg:font-medium font-normal text-[#338000]">
+                  Tailored Charging Solutions
                 </h1>
-                <p className="text-[12px] font-normal mt-3 lg:text-[14px] lg:font-normal 2xl:text-[16px] text-gray-600">
+                <p className="text-md font-normal mt-3 lg:text-xl lg:font-normal 2xl:text-[16px] text-[#3d592e]">
                   For commercial and public charging, we analyze your specific
                   needs and requirements to design charging solutions that cater
                   to your customers, employees, or visitors. We consider factors
@@ -122,10 +122,10 @@ const Services = () => {
           <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
             <div className="w-[95%] text-center   flex items-center ">
               <div className=" h-[96%]">
-                <h1 className="text-[22px] lg:text-[24] lg:font-medium font-normal text-gray-700">
+                <h1 className="text-2xl lg:font-medium font-normal text-[#338000]">
                   User-Friendly Charging Experience
                 </h1>
-                <p className="text-[12px] font-normal mt-3 lg:text-[14px] lg:font-normal 2xl:text-[16px] text-gray-600">
+                <p className="text-md font-normal mt-3 lg:text-xl lg:font-normal 2xl:text-[16px] text-[#3d592e]">
                   To ensure a seamless user experience, we have developed
                   user-friendly mobile applications and intuitive interfaces
                   that make finding, accessing, and paying for charging services
@@ -153,10 +153,10 @@ const Services = () => {
           <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
             <div className="w-[95%] text-center   flex items-center ">
               <div className=" h-[96%]">
-                <h1 className="text-[22px] lg:text-[24] lg:font-medium font-normal text-gray-700">
+                <h1 className="text-2xl lg:font-medium font-normal text-[#338000]">
                   Enhanced Safety and Reliability
                 </h1>
-                <p className="text-[12px] font-normal mt-3 lg:text-[14px] lg:font-normal 2xl:text-[16px] text-gray-600">
+                <p className="text-md font-normal mt-3 lg:text-xl lg:font-normal 2xl:text-[16px] text-[#3d592e]">
                   We prioritize the safety of both you and your vehicle by
                   implementing advanced safety features in our charging
                   infrastructure. This includes features such as automatic fault
@@ -182,10 +182,10 @@ const Services = () => {
           <div className="md:mt-0 mt-5 flex justify-center items-center  md:w-[50%]  ">
             <div className="w-[95%] text-center   flex items-center ">
               <div className=" h-[96%]">
-                <h1 className="text-[22px] lg:text-[24] lg:font-medium font-normal text-gray-700">
-                  Green Energy Initiatives:
+                <h1 className="text-2xl lg:font-medium font-normal text-[#338000]">
+                  Green Energy Initiatives
                 </h1>
-                <p className="text-[12px] font-normal mt-3 lg:text-[14px] lg:font-normal 2xl:text-[16px] text-gray-600">
+                <p className="text-md font-normal mt-3 lg:text-xl lg:font-normal 2xl:text-[16px] text-[#3d592e]">
                   We have implemented various strategies to minimize the
                   environmental impact of our charging infrastructure. One of
                   our key initiatives is to integrate renewable energy sources

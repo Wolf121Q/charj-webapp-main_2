@@ -28,10 +28,11 @@ const Navbar = () => {
   const darkBgRoute = router.pathname === "/services";
 
   const menuItems = [
-    { id: 1, title: "Government Subsidy", url: "/government-subsidy" },
-    { id: 2, title: "Services", url: "/services" },
-    { id: 3, title: "Contact Us", url: "/contact-us" },
-    { id: 4, title: "FAQ's", url: "/faqs" },
+    { id: 1, title: "Home", url: "/" },
+    { id: 2, title: "Government Subsidy", url: "/government-subsidy" },
+    { id: 3, title: "Services", url: "/services" },
+    { id: 4, title: "Contact Us", url: "/contact-us" },
+    { id: 5, title: "FAQ's", url: "/faqs" },
   ];
   return (
     <>
@@ -68,9 +69,9 @@ const Navbar = () => {
                 to={item.url}
                 className={`${
                   homeRoute && !scrolled
-                    ? "text-white"
-                    : "text-black hover:text-gray-800"
-                } cursor-pointer   hover:bg-slate-100  hover:font-semibold font-semibold hover:bg-opacity-5 px-3 py-1 rounded-md uppercase`}
+                    ? "text-white "
+                    : "text-black hover:text-[#3d592e]"
+                } cursor-pointer   hover:bg-slate-100  hover:font-semibold font-semibold hover:bg-opacity-10 px-3 py-1 rounded-md uppercase`}
               >
                 {item.title}
               </Link>
@@ -82,8 +83,8 @@ const Navbar = () => {
           <Link
             to="/join-us"
             className={`${
-              homeRoute && !scrolled ? "text-white" : "text-black"
-            } hidden lg:flex cursor-pointer hover:font-semibold font-semibold hover:bg-slate-100  hover:bg-opacity-5 px-3 py-1 rounded-md uppercase`}
+              homeRoute && !scrolled ? "text-white " : "text-black hover:text-[#3d592e]"
+            } hidden lg:flex cursor-pointer hover:font-semibold font-semibold hover:bg-slate-100 hover:bg-opacity-10 px-3 py-1 rounded-md uppercase`}
           >
             Partner With Us
           </Link>
