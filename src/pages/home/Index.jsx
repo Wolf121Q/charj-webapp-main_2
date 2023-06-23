@@ -1,8 +1,9 @@
 import React from "react";
 import heroVideo from "../../assets/images/car-model.mp4";
 import electricVehicle from "../../assets/images/electric-vehicle.mp4";
-import charjMobile2 from "../../assets/images/charj-mobile-2.jpg";
-import charjMobile3 from "../../assets/images/charj-mobile-3.jpg";
+import charjMobile1 from "../../assets/images/1st.jpg";
+import charjMobile2 from "../../assets/images/2nd.jpg";
+import charjMobile3 from "../../assets/images/3rd.jpg";
 import charjDesktop from "../../assets/images/charj-desktop.jpg";
 import ecoSystem from "../../assets/images/eco-system.jpg";
 import { useMediaQuery } from 'react-responsive';
@@ -36,11 +37,13 @@ const Home = () => {
       imgSrc: charjDesktop,
       title: "Types of EV Chargers",
       background: false,
-      imgSrcMobile: charjMobile2,
+      imgSrcMobile: charjMobile1,
       imgSrcDesktop: true,
       orderUrl: "https://www.tesla.com/model3/design#overview",
       demoUrl: "https://www.tesla.com/drive?selectedModel=model3",
     },
+
+   
     {
       id: 4,
       imgSrcMobile: charjMobile2,
