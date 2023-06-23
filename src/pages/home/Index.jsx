@@ -79,7 +79,7 @@ const Home = () => {
               {item.videoSrc && <video src={item.videoSrc} autoPlay loop muted className="h-full w-screen object-cover" />}
               <div className="absolute top-20 w-full flex flex-col gap-3 text-center justify-center items-center text-white">
                 {item.id != 3 && item.title && <h1 className="text-4xl font-bold z-10">{item.title}</h1>}
-                {item.id === 3 && item.title && <h1 className="text-xl md:text-2xl font-bold z-10 text-black border">{item.title}</h1>}
+                {item.id === 3 && item.title && <h1 className="text-xl md:text-2xl font-bold z-10 text-black ">{item.title}</h1>}
                 {item.subTitle && <p className="text-sm font-medium z-10 mt-5">{item.subTitle}</p>}
               </div>
               <div className="absolute w-full bottom-20 flex flex-col md:flex-row gap-3 text-center justify-center items-center z-10">

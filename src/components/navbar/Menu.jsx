@@ -40,8 +40,10 @@ const Menu = ({
             );
           })}
           <Link
-            to="/join-us"
+            to="/government-subsidy"
             className={` flex lg:hidden text-md font-semibold cursor-pointer hover:bg-slate-200 px-3 py-1 rounded-md`}
+            onClick={() => setShowMenu(!showMenu)}
+
           >
             Partner With Us
           </Link>

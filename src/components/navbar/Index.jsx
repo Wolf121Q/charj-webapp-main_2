@@ -91,7 +91,7 @@ const Navbar = () => {
 
         <span
           className={`${
-            (homeRoute || darkBgRoute) && !scrolled
+            homeRoute  && !scrolled
               ? "text-white"
               : "text-black"
           } cursor-pointer lg:hidden flex`}
