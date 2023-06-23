@@ -8,6 +8,7 @@ import ContactUs from "./pages/contact";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar/Index";
 import GovernmentSubsidy from "./pages/governmentSubsidy";
+import Contact from "./pages/contact";
 
 function App() {
   const location = useLocation();
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/join-us" element={<JoinUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/faqs" element={<Faqs />} />
         <Route path="/services" element={<Services />} />
         <Route path="/government-subsidy" element={<GovernmentSubsidy />} />
