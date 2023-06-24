@@ -139,7 +139,7 @@ function FormModal(props) {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 bottom-0 z-[9999] bg-[#000000cc] flex justify-center items-center backdrop-blur-sm px-2 py-4">
+    <div className="fixed top-0 left-0 right-0 bottom-0 z-[9999] bg-[#000000cc] flex justify-center items-center backdrop-blur-sm px-2 py-4 ">
       <div className="bg-white rounded-md max-w-[400px] max-h-[80vh] md:max-w-full md:max-h-full overflow-y-scroll">
         <div className="modal-header">
 
@@ -158,7 +158,7 @@ function FormModal(props) {
               <div className="col-span-2 hidden md:block"></div>
               <div className="col-span-12 md:col-span-8 text-center rounded-lg">
                 <form
-                  className="bg-white rounded-lg px-6 pt-1 md:pt-6 pb-2 md:pb-12 mb-4"
+                  className="bg-white rounded-lg px-6 pt-1 md:pt-6 pb-2 md:pb-12 mb-4 max-w-2xl"
                   onSubmit={handleFormSubmit}
                 >
 
