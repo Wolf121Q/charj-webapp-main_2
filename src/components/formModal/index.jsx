@@ -64,18 +64,43 @@ function FormModal(props) {
 
 
   const saveData = () => {
-    // Get a reference to the collection you want to store data in
+
+    const datee = new Date();
+  //  alert(datee);
+    
+    // Convert date object to string
+    let dateString = datee.toString();
+    let currentTime = dateString.replace(" (Pacific Daylight Time)", "");
+  // alert(formValues.firstName);
+
+  //alert(formValues.firstName);
+   //alert(formValues.lastName);
+  // alert(formValues.email);
+  //alert(formValues.chargerCategory);
+  //alert(formValues.country);
+  //alert(formValues.state);
+ // alert(formValues.city);
+ //alert(formValues.partnershipWays);
+ //alert(formValues.phone)
+
+
+ 
     const collectionRef = firestore.collection('Partners');
-    // Create a new document with a unique ID (Firestore will generate the ID)
     const newDocRef = collectionRef.doc();
-    // Set the data you want to store in the document
     const data = {
-      partName: formValues.name,
+      partFirstName: formValues.firstName,
+      partlastName: formValues.lastName,
       partMail: formValues.email,
       partPhone: formValues.phone,
-      partcom: formValues.partnership,
+      EVCharger:"N/A",
+      ChargerCategory:formValues.chargerCategory,
+      Country: formValues.country,
       partState: formValues.state,
+      partcity: formValues.city,
       partZip: formValues.zipCode,
+      Ways_Of_Partnership:formValues.partnershipWays,
+      Is_in_US:"N/A",
+      Date_Time:currentTime
     };
     // Save the data to Firestore
     newDocRef
@@ -88,6 +113,7 @@ function FormModal(props) {
         console.error('Error storing data: ', error);
       });
   };
+
 
   const handleFormSubmit = (event) => {
     event.preventDefault();

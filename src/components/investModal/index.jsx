@@ -315,22 +315,35 @@ function InvestModal(props) {
 
 
   const saveData = () => {
-    // Get a reference to the collection you want to store data in
-    const collectionRef = firestore.collection('Partners');
-    // Create a new document with a unique ID (Firestore will generate the ID)
+
+
+    const datee = new Date();
+
+      
+  
+      let dateString = datee.toString();
+      let currentTime = dateString.replace(" (Pacific Daylight Time)", "");
+    const collectionRef = firestore.collection('Investers');
     const newDocRef = collectionRef.doc();
-    // Set the data you want to store in the document
+    
     const data = {
-      partName: formValues.name,
-      partMail: formValues.email,
-      partPhone: formValues.phone,
-      partcom: formValues.partnership,
-      partState: formValues.state,
-      partZip: formValues.zipCode,
+      InvestFirstName: formValues.firstName,
+      InvestlastName: formValues.lastName,
+      InvestMail: formValues.email,
+      InvestPhone: formValues.phone,
+      EVCharger:"N/A",
+      ChargerCategory:formValues.chargerCategory,
+      Country: formValues.country,
+      InvesterState: formValues.state,
+      Investercity: formValues.city,
+      InvesterZip: formValues.zipCode,
+      Ways_Of_Partnership:formValues.partnershipWays,
+      Is_in_US:"N/A",
+      Date_Time:currentTime
     };
     // Save the data to Firestore
     newDocRef
-      .set(data)
+      .set(data) 
       .then(() => {
         console.log('Data stored successfully!');
         props.closePartner
