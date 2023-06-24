@@ -156,8 +156,12 @@ export const country = [
         name: "Canada",
     },
     {
+        name: "USA",
+    },
+    {
         name: "UK",
     },
+    
     {
         name: "Saudi Arabia",
     },
