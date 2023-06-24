@@ -126,7 +126,7 @@
 //                   className="bg-white rounded-lg px-6 pt-1 md:pt-6 pb-2 md:pb-12 mb-4"
 //                   onSubmit={handleFormSubmit}
 //                 >
-                  
+
 //                   <h4 className="text-2xl pb-7 capitalize">{props.title}</h4>
 //                   <div className="mb-4">
 //                     <input
@@ -225,10 +225,10 @@
 //                     {open && (
 //                       <div style={modalStyle}>
 //                         <div style={modalContentStyle}>
-                         
+
 //                           <h3>Information Saved successfully</h3>
 //                           <img src={checkedImg} alt="Image" style={imageStyle} />
-                          
+
 //                         </div>
 //                         {/* <button onClick={handleClose}>Close</button> */}
 //                       </div>
@@ -319,31 +319,31 @@ function InvestModal(props) {
 
     const datee = new Date();
 
-      
-  
-      let dateString = datee.toString();
-      let currentTime = dateString.replace(" (Pacific Daylight Time)", "");
+
+
+    let dateString = datee.toString();
+    let currentTime = dateString.replace(" (Pacific Daylight Time)", "");
     const collectionRef = firestore.collection('Investers');
     const newDocRef = collectionRef.doc();
-    
+
     const data = {
       InvestFirstName: formValues.firstName,
       InvestlastName: formValues.lastName,
       InvestMail: formValues.email,
       InvestPhone: formValues.phone,
-      EVCharger:"N/A",
-      ChargerCategory:formValues.chargerCategory,
+      EVCharger: "N/A",
+      ChargerCategory: formValues.chargerCategory,
       Country: formValues.country,
       InvesterState: formValues.state,
       Investercity: formValues.city,
       InvesterZip: formValues.zipCode,
-      Ways_Of_Partnership:formValues.partnershipWays,
-      Is_in_US:"N/A",
-      Date_Time:currentTime
+      Ways_Of_Partnership: formValues.partnershipWays,
+      Is_in_US: "N/A",
+      Date_Time: currentTime
     };
     // Save the data to Firestore
     newDocRef
-      .set(data) 
+      .set(data)
       .then(() => {
         console.log('Data stored successfully!');
         props.closePartner
@@ -409,7 +409,7 @@ function InvestModal(props) {
 
           <div className="bg-none flex justify-end w-full p-5">
             <RxCross2
-               onClick={props.closeInvest}
+              onClick={props.closeInvest}
               size={24}
               className="cursor-pointer"
             />
@@ -418,11 +418,10 @@ function InvestModal(props) {
 
         <div className="modal-body ">
           <div className="container mx-2 md:mx-0 mt-4 md:mt-0  ">
-            <div className="grid grid-cols-12">
-              <div className="col-span-2 hidden md:block"></div>
+            <div className="grid">
               <div className="col-span-12 md:col-span-8 text-center rounded-lg">
                 <form
-                  className="bg-white rounded-lg px-6 pt-1 md:pt-6 pb-2 md:pb-12 mb-4"
+                  className="bg-white rounded-lg px-6 pt-1 md:pt-6 pb-2 md:pb-12 mb-4 max-w-2xl"
                   onSubmit={handleFormSubmit}
                 >
 
@@ -636,7 +635,6 @@ function InvestModal(props) {
                   </div>
                 </form>
               </div>
-              <div className="col-span-2 hidden md:block"></div>
             </div>
           </div>
         </div>

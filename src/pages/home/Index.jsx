@@ -4,6 +4,9 @@ import electricVehicle from "../../assets/images/electric-vehicle.mp4";
 import charjMobile1 from "../../assets/images/1st.jpg";
 import charjMobile2 from "../../assets/images/2nd.jpg";
 import charjMobile3 from "../../assets/images/3rd.jpg";
+import evCharger1 from "../../assets/images/ev-charger-1.jpg";
+import evCharger2 from "../../assets/images/ev-charger-2.jpg";
+import evCharger3 from "../../assets/images/ev-charger-3.jpg";
 import charjDesktop from "../../assets/images/charj-desktop.jpg";
 import ecoSystem from "../../assets/images/eco-system.jpg";
 import { useMediaQuery } from 'react-responsive';
@@ -34,7 +37,9 @@ const Home = () => {
     },
     {
       id: 3,
-      imgSrc: charjDesktop,
+      imgSrc1: evCharger1,
+      imgSrc2: evCharger2,
+      imgSrc3: evCharger3,
       title: "Types of EV Chargers",
       background: false,
       imgSrcMobile: charjMobile1,
@@ -43,7 +48,7 @@ const Home = () => {
       demoUrl: "https://www.tesla.com/drive?selectedModel=model3",
     },
 
-   
+
     {
       id: 4,
       imgSrcMobile: charjMobile2,
@@ -69,14 +74,14 @@ const Home = () => {
   return (
     <>
       {products.map((item, index) => {
-        const hasImage = isSmallScreen ? !!item.imgSrcMobile : !!item.imgSrc;
+        const hasImage = isSmallScreen ? !!item.imgSrcMobile : !!item.imgSrc || !!item.imgSrc1 || !!item.imgSrc2 || !!item.imgSrc3;
         const hasVideo = !!item.videoSrc;
 
         if (!hasImage && !hasVideo) {
           return null;
         }
         return (
-          <div className="h-[100vh] max-w-screen relative snap-center" key={index}>
+          <div className="sm:h-[100vh] max-w-screen relative snap-center" key={index}>
             {item.background ? (
               <div className="relative flex justify-center items-center h-screen w-full">
                 {isSmallScreen && item.imgSrcMobile ? (
@@ -84,7 +89,7 @@ const Home = () => {
                 ) : (
                   item.imgSrc && <img src={item.imgSrc} alt="" className="h-[80vh] w-screen object-contain" />
                 )}
-                {item.videoSrc && <video src={item.videoSrc} autoPlay loop muted className="h-full w-screen object-cover" />}
+                {item.videoSrc && <video src={item.videoSrc} autoPlay loop muted className="h-full w-screen object-cover" style={{filter: "brightness(40%)"}} />}
                 <div className="absolute top-20 w-full flex flex-col gap-3 text-center justify-center items-center text-white">
                   {item.title && <h1 className="text-4xl font-bold text-white z-10">{item.title}</h1>}
                   {item.subTitle && <p className="text-sm font-medium z-10 mt-5">{item.subTitle}</p>}
@@ -108,8 +113,31 @@ const Home = () => {
                 {isSmallScreen && item.imgSrcMobile ? (
                   <img src={item.imgSrcMobile} alt="" className="h-[80vh] w-screen object-contain" />
                 ) : (
-                  item.imgSrc && <img src={item.imgSrc} alt="" className="h-[80vh] md:h-auto lg:h-[80vh] w-screen object-contain" />
+                
+                    item.imgSrc ?
+                      <img src={item.imgSrc} alt="" className="h-[80vh] md:h-auto lg:h-[80vh] w-screen object-contain" />
+                      :
+                      item.imgSrc1 && (
+                        <div className="container mx-auto max-w-6xl  ">
+                          <div className="grid md:grid-cols-3 gap-3 lg:gap-0">
+                            <div>
+                              <img src={item.imgSrc1} alt="" className="h-[75vh] w-full object-contain" />
+                            </div>
+                            <div>
+                              <img src={item.imgSrc2} alt="" className="h-[75vh] w-full object-contain" />
+
+                            </div>
+                            <div>
+                              <img src={item.imgSrc3} alt="" className="h-[75vh] w-full object-contain" />
+
+                            </div>
+                          </div>
+                        </div>
+                      )
+                  
                 )}
+
+
               </div>
             )}
 
@@ -124,3 +152,4 @@ const Home = () => {
 };
 
 export default Home;
+

@@ -180,8 +180,7 @@ function FormModal(props) {
 
         <div className="modal-body ">
           <div className="container mx-2 md:mx-0 mt-4 md:mt-0  ">
-            <div className="grid grid-cols-12">
-              <div className="col-span-2 hidden md:block"></div>
+            <div className="grid">
               <div className="col-span-12 md:col-span-8 text-center rounded-lg">
                 <form
                   className="bg-white rounded-lg px-6 pt-1 md:pt-6 pb-2 md:pb-12 mb-4 max-w-2xl"
@@ -398,7 +397,6 @@ function FormModal(props) {
                   </div>
                 </form>
               </div>
-              <div className="col-span-2 hidden md:block"></div>
             </div>
           </div>
         </div>
