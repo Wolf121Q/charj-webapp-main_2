@@ -16,15 +16,20 @@ function JoinUs() {
   };
 
   const closePartner = () => {
-    setPartner(false);
+    setTimeout(() => {
+      setPartner(false);
+    }, 1000);
   };
+
 
   const openInvest = () => {
     setInvest(true);
   };
 
   const closeInvest = () => {
-    setInvest(false);
+    setTimeout(() => {
+      setInvest(false);
+    }, 1000);
   };
   const handleMouseEnter = () => {
     setHovered(true);
@@ -122,7 +127,6 @@ function JoinUs() {
               {partner && (
                 <PartnerModal
                   closePartner={closePartner}
-                  setInvest={setInvest}
                   title="Partner with Us"
                 />
               )}
