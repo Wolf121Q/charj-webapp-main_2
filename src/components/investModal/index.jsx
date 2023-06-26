@@ -13,6 +13,8 @@ function InvestModal(props) {
   const [states, setStates] = useState([]);
   const [canadaSelected, setCanadaSelected] = useState(false);
 
+  const [loading, setLoading] = useState(false);
+
   const handleOpen = () => {
     setOpen(true);
     setTimeout(() => {
@@ -29,14 +31,13 @@ function InvestModal(props) {
     handleSubmit,
   } = useForm({ mode: "all" });
 
-
   const handleCountryChange = (event) => {
     const selectedCountry = event.target.value;
     const selectedCountryData = countries.find(
       (country) => country.name === selectedCountry
     );
 
-    console.log(selectedCountry)
+    console.log(selectedCountry);
     if (selectedCountry === "Canada") {
       setCanadaSelected(true);
     } else setCanadaSelected(false);
@@ -46,16 +47,16 @@ function InvestModal(props) {
     setValue("city", "");
   };
 
-  
   const onSubmit = (data) => {
+    setLoading(true);
     const currentDate = new Date();
-    const nowTime=`${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`
-    const stringdate=currentDate.toISOString();
+    const nowTime = `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+    const stringdate = currentDate.toISOString();
     //alert(nowTime);
-    const mydate=stringdate.substring(0, 10);
-  
-    const date_Time=`${mydate} - ${nowTime}`;
-   //alert(date_Time);
+    const mydate = stringdate.substring(0, 10);
+
+    const date_Time = `${mydate} - ${nowTime}`;
+    //alert(date_Time);
     data.submissionDate = date_Time;
 
     // Get a reference to the collection you want to store data in
@@ -67,10 +68,14 @@ function InvestModal(props) {
       .set(data)
       .then(() => {
         console.log("Data stored successfully!", data);
-        props.closePartner;
+        setLoading(false);
+        handleOpen();
+        reset()
+        props.closeInvest();
       })
       .catch((error) => {
         console.error("Error storing data: ", error);
+        setLoading(false);
       });
   };
 
@@ -317,12 +322,14 @@ function InvestModal(props) {
                           required: "Zip/Postal code is required",
                           minLength: {
                             value: 5,
-                            message: "Zip/Postal Code cannot be less than 5 digits"
+                            message:
+                              "Zip/Postal Code cannot be less than 5 digits",
                           },
                           maxLength: {
                             value: 9,
-                            message: "Zip/Postal Code cannot be more than 9 digits"
-                          }
+                            message:
+                              "Zip/Postal Code cannot be more than 9 digits",
+                          },
                         })}
                       />
                       {errors.zipcode && (
@@ -376,7 +383,6 @@ function InvestModal(props) {
                         <option value="yes"> Yes </option>
                         <option value="no"> No </option>
                       </select>
-
                     ) : (
                       <p>
                         Support is only available for Canada. Soon it will be
@@ -384,10 +390,10 @@ function InvestModal(props) {
                       </p>
                     )}
                     {errors.support && (
-                        <span className="error text-red-600 text-sm">
-                          {errors.support.message}
-                        </span>
-                      )}
+                      <span className="error text-red-600 text-sm">
+                        {errors.support.message}
+                      </span>
+                    )}
                   </div>
 
                   <div className="min-h-[4.4rem] max-h-[4.8rem] text-left">
@@ -398,10 +404,11 @@ function InvestModal(props) {
                   </div>
                   <div className="flex items-center justify-center">
                     <button
+                    disabled={loading}
                       className="bg-black text-base text-[#C6C6C6] tracking-wider font-bold py-2 px-7 rounded  focus:outline-none focus:shadow-outline"
                       type="submit"
                     >
-                      SEND
+                      {loading ? "Submitting..." : "Submit"}
                     </button>
 
                     {open && (
