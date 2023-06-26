@@ -13,8 +13,6 @@ function PartnerModal(props) {
   const [states, setStates] = useState([]);
   const [canadaSelected, setCanadaSelected] = useState(false);
 
-  const [loading, setLoading] = useState(false);
-
   const handleOpen = () => {
     setOpen(true);
     setTimeout(() => {
@@ -31,12 +29,14 @@ function PartnerModal(props) {
     handleSubmit,
   } = useForm({ mode: "all" });
 
+
   const handleCountryChange = (event) => {
     const selectedCountry = event.target.value;
     const selectedCountryData = countries.find(
       (country) => country.name === selectedCountry
     );
 
+    console.log(selectedCountry)
     if (selectedCountry === "Canada") {
       setCanadaSelected(true);
     } else setCanadaSelected(false);
@@ -46,9 +46,17 @@ function PartnerModal(props) {
     setValue("city", "");
   };
 
+  
   const onSubmit = (data) => {
-    setLoading(true);
-
+    const currentDate = new Date();
+    const nowTime=`${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`
+    const stringdate=currentDate.toISOString();
+    //alert(nowTime);
+    const mydate=stringdate.substring(0, 10);
+  
+    const date_Time=`${mydate} - ${nowTime}`;
+   //alert(date_Time);
+    data.submissionDate = date_Time;
     // Get a reference to the collection you want to store data in
     const collectionRef = firestore.collection("Partners");
     // Create a new document with a unique ID (Firestore will generate the ID)
@@ -58,14 +66,10 @@ function PartnerModal(props) {
       .set(data)
       .then(() => {
         console.log("Data stored successfully!", data);
-        props.closePartner();
-        reset();
-        setLoading(false);
-        handleOpen();
+        props.closePartner;
       })
       .catch((error) => {
         console.error("Error storing data: ", error);
-        setLoading(false);
       });
   };
 
@@ -167,7 +171,7 @@ function PartnerModal(props) {
                         type="email"
                         name="email"
                         placeholder="Email"
-                        {...register("email", {
+                        {...register(" email", {
                           required: "Please enter a valid email",
                           pattern: {
                             value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
@@ -290,10 +294,6 @@ function PartnerModal(props) {
                         name="city"
                         {...register("city", {
                           required: "City is required",
-                          pattern: {
-                            value: /^[A-Za-z]+$/i,
-                            message: "City cannot be a number",
-                          },
                         })}
                         placeholder="City"
                       />
@@ -316,18 +316,12 @@ function PartnerModal(props) {
                           required: "Zip/Postal code is required",
                           minLength: {
                             value: 5,
-                            message:
-                              "Zip/Postal Code cannot be less than 5 digits",
+                            message: "Zip/Postal Code cannot be less than 5 digits"
                           },
                           maxLength: {
                             value: 9,
-                            message:
-                              "Zip/Postal Code cannot be more than 9 digits",
-                          },
-                          pattern: {
-                            value: /^[0-9]+$/i,
-                            message: "Phone cannot be a string",
-                          },
+                            message: "Zip/Postal Code cannot be more than 9 digits"
+                          }
                         })}
                       />
                       {errors.zipcode && (
@@ -381,20 +375,18 @@ function PartnerModal(props) {
                         <option value="yes"> Yes </option>
                         <option value="no"> No </option>
                       </select>
+
                     ) : (
                       <p>
                         Support is only available for Canada. Soon it will be
                         available in other countries.
-                        {!canadaSelected && (
-                          <input type="hidden" name="support" value="N/A"  {...register("support")} />
-                        )}
                       </p>
                     )}
                     {errors.support && (
-                      <span className="error text-red-600 text-sm">
-                        {errors.support.message}
-                      </span>
-                    )}
+                        <span className="error text-red-600 text-sm">
+                          {errors.support.message}
+                        </span>
+                      )}
                   </div>
 
                   <div className="min-h-[4.4rem] max-h-[4.8rem] text-left">
@@ -405,11 +397,10 @@ function PartnerModal(props) {
                   </div>
                   <div className="flex items-center justify-center">
                     <button
-                      disabled={loading}
                       className="bg-black text-base text-[#C6C6C6] tracking-wider font-bold py-2 px-7 rounded  focus:outline-none focus:shadow-outline"
                       type="submit"
                     >
-                      {loading ? "Please wait..." : "Submit"}
+                      SEND
                     </button>
 
                     {open && (
