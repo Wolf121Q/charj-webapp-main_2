@@ -1,206 +1,35 @@
-export const states = [
-    {
-        name: "Alabama",
-    },
-    {
-        name: "Alaska",
-    },
-    {
-        name: "Arizona",
-    },
-    {
-        name: "Arkansas",
-    },
-    {
-        name: "California",
-    },
-    {
-        name: "Colorado",
-    },
-    {
-        name: "Connecticut",
-    },
-    {
-        name: "Delaware",
-    },
-    {
-        name: "Florida",
-    },
-    {
-        name: "Georgia",
-    },
-    {
-        name: "Hawaii",
-    },
-    {
-        name: "Idaho",
-    },
-    {
-        name: "Illinois",
-    },
-    {
-        name: "Indiana",
-    },
-    {
-        name: "Iowa",
-    },
-    {
-        name: "Kansas",
-    },
-    {
-        name: "Kentucky",
-    },
-    {
-        name: "Louisiana",
-    },
-    {
-        name: "Maine",
-    },
-    {
-        name: "Maryland",
-    },
-    {
-        name: "Massachusetts",
-    },
-    {
-        name: "Michigan",
-    },
-    {
-        name: "Minnesota",
-    },
-    {
-        name: "Mississippi",
-    },
-    {
-        name: "Missouri",
-    },
-    {
-        name: "Montana",
-    },
-    {
-        name: "Nebraska",
-    },
-    {
-        name: "Nevada",
-    },
-    {
-        name: "New Hampshire",
-    },
-    {
-        name: "New Jersey",
-    },
-    {
-        name: "New Mexico",
-    },
-    {
-        name: "New York",
-    },
-    {
-        name: "North Carolina",
-    },
-    {
-        name: "North Dakota",
-    },
-    {
-        name: "Ohio",
-    },
-    {
-        name: "Oklahoma",
-    },
-    {
-        name: "Oregon",
-    },
-    {
-        name: "Pennsylvania",
-    },
-    {
-        name: "Rhode Island",
-    },
-    {
-        name: "South Carolina",
-    },
-    {
-        name: "South Dakota",
-    },
-    {
-        name: "Tennessee",
-    },
-    {
-        name: "Texas",
-    },
-    {
-        name: "Utah",
-    },
-    {
-        name: "Vermont",
-    },
-    {
-        name: "Virginia",
-    },
-    {
-        name: "Washington",
-    },
-    {
-        name: "West Virginia",
-    },
-    {
-        name: "Wisconsin",
-    },
-    {
-        name: "Wyoming",
-    }
-];
 
-export const country = [
-    {
-        name: "Canada",
-    },
-    {
-        name: "UK",
-    },
-    {
-        name: "Saudi Arabia",
-    },
-    {
-        name: "UAE",
-    },
-]
-
-export const interestLevel = [
-    {
-        level: "Level 1",
-    },
-    {
-        level: "Level 2",
-    },
-    {
-        level: "Level 3",
-    },
-]
 
 export const partnershipWays = [
-    {
-        partnershipWay: "Bank Financing",
-    },
-    {
-        partnershipWay: "Leasing",
-    },
-    {
-        partnershipWay: "Manufacture Based Financing",
-    },
-    {
-        partnershipWay: "Out Right Purchase",
-    },
-]
+  {
+    id: 1,
+    partnershipWay: "Bank Financing",
+  },
+  {
+    id: 2,
+    partnershipWay: "Leasing",
+  },
+  {
+    id: 3,
+    partnershipWay: "Manufacture Based Financing",
+  },
+  {
+    id: 4,
+    partnershipWay: "Out Right Purchase",
+  },
+];
 
 export const chargerCategory = [
-    {
-        category: "Level 1",
-    },
-    {
-        category: "Level 2",
-    },
-    {
-        category: "Level 3",
-    },
-]
+  {
+    id: 1,
+    category: "Level 1",
+  },
+  {
+    id: 2,
+    category: "Level 2",
+  },
+  {
+    id: 3,
+    category: "Level 3",
+  },
+];

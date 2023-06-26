@@ -1,9 +1,9 @@
 import { useState } from "react";
-import FormModal from "../../components/formModal";
 import InvestModal from "../../components/investModal";
 import { AiOutlinePhone } from "react-icons/ai";
 import { HiOutlineMail } from "react-icons/hi";
 import { MdLocationOn } from "react-icons/md";
+import PartnerModal from "../../components/partnerModal";
 
 function JoinUs() {
   const [invest, setInvest] = useState(false);
@@ -120,7 +120,7 @@ function JoinUs() {
                 </button>
               </div>
               {partner && (
-                <FormModal
+                <PartnerModal
                   closePartner={closePartner}
                   setInvest={setInvest}
                   title="Partner with Us"

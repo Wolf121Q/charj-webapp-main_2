@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { countriesData } from "../../data/data";
 import { partnershipWays, chargerCategory } from "../../data/statesData";
 
-function InvestModal(props) {
+function PartnerModal(props) {
   const [open, setOpen] = useState(false);
   const [countries, setCountries] = useState(countriesData);
   const [states, setStates] = useState([]);
@@ -49,7 +49,7 @@ function InvestModal(props) {
   
   const onSubmit = (data) => {
     // Get a reference to the collection you want to store data in
-    const collectionRef = firestore.collection("Investers");
+    const collectionRef = firestore.collection("Partners");
     // Create a new document with a unique ID (Firestore will generate the ID)
     const newDocRef = collectionRef.doc();
     // Set the data you want to store in the document
@@ -101,7 +101,7 @@ function InvestModal(props) {
         <div className="modal-header">
           <div className="bg-none flex justify-end w-full p-5">
             <RxCross2
-              onClick={props.closeInvest}
+              onClick={props.closePartner}
               size={24}
               className="cursor-pointer"
             />
@@ -419,4 +419,4 @@ function InvestModal(props) {
   );
 }
 
-export default InvestModal;
+export default PartnerModal;
