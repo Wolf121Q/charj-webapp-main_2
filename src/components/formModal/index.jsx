@@ -6,7 +6,7 @@ import { chargerCategory, country, interestLevel, partnershipWays, states } from
 import getZipCode from "../getZipCode";
 import checkedImg from "../../assets/images/checked.png"
 import { InvestmentData, PartnerShipData } from "../../data/partnershipOptionsData";
-import { Saudiregions, UKstates, canada_provinces, emirates } from "../../data/states";
+import { Saudiregions, UKstates, U_states, canada_provinces, emirates } from "../../data/states";
 function FormModal(props) {
   const [states, setStates] = useState([]);
   const messageref = useRef();
@@ -56,6 +56,8 @@ function FormModal(props) {
         availableStates = Saudiregions;
       } else if (value === 'UAE') {
         availableStates = emirates;
+      }else if (value === 'USA') {
+        availableStates = U_states;
       }
 
       setStates(availableStates);
