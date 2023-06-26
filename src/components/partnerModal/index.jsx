@@ -48,6 +48,15 @@ function PartnerModal(props) {
 
   
   const onSubmit = (data) => {
+    const currentDate = new Date();
+    const nowTime=`${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`
+    const stringdate=currentDate.toISOString();
+    //alert(nowTime);
+    const mydate=stringdate.substring(0, 10);
+  
+    const date_Time=`${mydate} - ${nowTime}`;
+   //alert(date_Time);
+    data.submissionDate = date_Time;
     // Get a reference to the collection you want to store data in
     const collectionRef = firestore.collection("Partners");
     // Create a new document with a unique ID (Firestore will generate the ID)
@@ -162,7 +171,7 @@ function PartnerModal(props) {
                         type="email"
                         name="email"
                         placeholder="Email"
-                        {...register("email", {
+                        {...register(" email", {
                           required: "Please enter a valid email",
                           pattern: {
                             value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
