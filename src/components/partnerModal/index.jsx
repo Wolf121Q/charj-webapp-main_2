@@ -15,7 +15,6 @@ function PartnerModal(props) {
 
   const [loading, setLoading] = useState(false);
 
-
   const handleOpen = () => {
     setOpen(true);
     setTimeout(() => {
@@ -70,14 +69,13 @@ function PartnerModal(props) {
       .then(() => {
         console.log("Data stored successfully!", data);
         setLoading(false);
-        reset()
+        reset();
         handleOpen();
         props.closePartner();
       })
       .catch((error) => {
         console.error("Error storing data: ", error);
         setLoading(false);
-
       });
   };
 
@@ -402,6 +400,14 @@ function PartnerModal(props) {
                     <p className="text-[#595959] text-sm">
                       This site is protected by reCAPTCHA and the Google Privacy
                       Policy and Terms of Service apply.
+                      {!canadaSelected && (
+                        <input
+                          type="hidden"
+                          name="support"
+                          value="N/A"
+                          {...register("support")}
+                        />
+                      )}
                     </p>
                   </div>
                   <div className="flex items-center justify-center">

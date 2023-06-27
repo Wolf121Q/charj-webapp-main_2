@@ -70,7 +70,7 @@ function InvestModal(props) {
         console.log("Data stored successfully!", data);
         setLoading(false);
         handleOpen();
-        reset()
+        reset();
         props.closeInvest();
       })
       .catch((error) => {
@@ -387,6 +387,14 @@ function InvestModal(props) {
                       <p>
                         Support is only available for Canada. Soon it will be
                         available in other countries.
+                        {!canadaSelected && (
+                          <input
+                            type="hidden"
+                            name="support"
+                            value="N/A"
+                            {...register("support")}
+                          />
+                        )}
                       </p>
                     )}
                     {errors.support && (
@@ -404,7 +412,7 @@ function InvestModal(props) {
                   </div>
                   <div className="flex items-center justify-center">
                     <button
-                    disabled={loading}
+                      disabled={loading}
                       className="bg-black text-base text-[#C6C6C6] tracking-wider font-bold py-2 px-7 rounded  focus:outline-none focus:shadow-outline"
                       type="submit"
                     >
